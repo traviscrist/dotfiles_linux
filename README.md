@@ -10,3 +10,8 @@ These are the dotfiles belonging to me, Ben. They are organized into a few folde
 You can install these files by running `./dotproduct.pl config.yml`.
 This will use the information stored in `config.yml` to place the files
 in your home directory.
+
+The program `dotproduct` doesn't just copy files. It also will interpolate
+certain strings found within my configuration files. The different
+variables that are interpolated are defined in `config.yml`. The delimiter
+used is specified for each entry in `config.yml`.
