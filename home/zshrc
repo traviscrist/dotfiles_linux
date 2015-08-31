@@ -1,0 +1,52 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:]}={[:upper:]}'
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle :compinstall filename '/home/ben/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory nomatch notify
+unsetopt autocd beep extendedglob
+# End of lines configured by zsh-newuser-install
+
+bindkey -e
+
+# Environment Variables
+export PATH=$PATH:~/.local/bin
+export PATH="/home/ben/.bin:$PATH";
+export PATH="/home/ben/.cabal/bin:$PATH";
+
+export EDITOR="vim"
+#export BROWSER=/usr/bin/dwb
+
+# Aliases
+alias ls="ls --color=auto"
+alias vi="vim"
+alias spacman="sudo pacman --color always"
+alias pacman="pacman --color always"
+alias python="python -q"
+alias redwm='cd ~/Builds/dwm; updpkgsums; makepkg -efi --noconfirm && killall dwm'
+alias bc="bc -q"
+alias gdb="gdb -q"
+
+alias mp="mousepad 2>/dev/null >/dev/null"
+
+alias fixpcgen="wmname LG3D "
+
+alias sql="sqlite3 -header -column "
+alias sqle="sqlite3 -header -column -echo"
+
+# Prompt
+PS1="> "
+prompt="> "

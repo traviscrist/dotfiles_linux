@@ -1,0 +1,102 @@
+My config file for dotproduct
+---
+variables:  
+  
+  bg: '111111'
+  fg: 'bbbbbb'
+
+  dblack: '393939'
+  lblack: '535551'
+
+  dred: 'ca674a'
+  lred: 'ea2828'
+
+  dgreen: '96a967'
+  lgreen: '87dd32'
+
+  dyellow: 'd3a94a'
+  lyellow: 'f7e44d'
+
+  dblue: '5778c1'
+  lblue: '6f9bca'
+
+  dpurple: '9c35ac'
+  lpurple: 'a97ca4'
+
+  dcyan: '6eb5f3'
+  lcyan: '32dddd'
+
+  dwhite: 'a9a9a9'
+  lwhite: 'e9e9e7'
+
+files:
+  Xdefaults:
+    source: home/Xdefaults
+    destination: '/home/ben/.Xdefaults'
+    delimeter: '@'
+
+  xinitrc:
+    source: home/xinitrc
+    destination: '/home/ben/.xinitrc'
+    delimeter: '@'
+
+  vimrc:
+    source: home/vimrc
+    destination: '/home/ben/.vimrc'
+    delimeter: '@'
+
+  vimperatorrc:
+    source: web/vimperatorrc
+    destination: '/home/ben/.vimperatorrc'
+    delimeter: '@'
+
+  zshrc:
+    source: home/zshrc
+    destination: '/home/ben/.zshrc'
+    delimeter: '@'
+
+  scripts:
+    source: scripts/
+    destination: '/home/ben/.local/bin/'
+    delimeter: '@@'
+
+  mpd:
+    source: home/mpd.conf
+    destination: '/home/ben/.mpdconf'
+    delimeter: '@'
+
+  dwm:
+    source: dwm/config.h
+    destination: '/home/ben/Builds/dwm/src/config.h'
+    delimeter: '@'
+
+  vimperator:
+    source: web/colors.vimp
+    destination: '/home/ben/.vimperator/colors/custom.vimp'
+    delimeter: '@'
+
+  ncmpcpp:
+    source: home/ncmpcpp_config
+    destination: '/home/ben/.ncmpcpp/config'
+    delimeter: '@@'
+
+  redshift:
+    source: home/redshift.conf
+    destination: '/home/ben/.config/redshift.conf'
+    delimeter: '@'
+
+  home_html:
+    source: web/home.html
+    destination: '/home/ben/.homepage/home.html'
+    delimeter: '@@'
+
+  home_css:
+    source: web/home.css
+    destination: '/home/ben/.homepage/home.css'
+    delimeter: '@@'
+
+scripts:
+  
+  redwm:
+    command: '/home/ben/.local/bin/redwm.sh'
+    target: dwm

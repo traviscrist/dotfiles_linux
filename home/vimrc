@@ -1,0 +1,13 @@
+syntax on
+colorscheme jellybeans
+set number
+
+set expandtab
+set tabstop=2
+set softtabstop=2
+set sw=2
+
+set mouse=a
+
+autocmd BufWrite * mkview
+autocmd BufRead  * silent loadview

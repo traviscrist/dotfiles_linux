@@ -1,0 +1,47 @@
+! Black
+*color0:   #@dblack@
+*color8:   #@lblack@
+
+! Red
+*color1:   #@dred@
+*color9:   #@lred@
+
+! Green
+*color2:   #@dgreen@
+*color10:  #@lgreen@
+
+! Yellow
+*color3:   #@dyellow@
+*color11:  #@lyellow@
+
+! Blue
+*color4:   #@dblue@
+*color12:  #@lblue@
+
+! Magenta
+*color5:   #@dpurple@
+*color13:  #@lpurple@
+
+! Cyan
+*color6:   #@dcyan@
+*color14:  #@lcyan@
+
+! White
+*color7:   #@dwhite@
+*color15:  #@lwhite@
+
+*foreground: #bbbbbb
+*background: #111111
+
+!------------ URxvt ----------------
+
+URxvt*font: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+URxvt*boldFont: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+
+URxvt*saveLines: 12000
+URxvt*scrollBar: false
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.buttom: 1
+URxvt.colorURL: #@lcyan@
