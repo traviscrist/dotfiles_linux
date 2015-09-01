@@ -8,6 +8,7 @@ synclient MaxTapTime=0
 
 feh --bg-scale /home/ben/Pictures/linen.png
 
+dropbox-cli start &
 xcompmgr -c &
 mpd &
 dwm_bar.rb &
