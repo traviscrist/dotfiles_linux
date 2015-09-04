@@ -37,6 +37,7 @@
 
 URxvt*font: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
 URxvt*boldFont: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+URxvt*italicFont: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
 
 URxvt*saveLines: 12000
 URxvt*scrollBar: false

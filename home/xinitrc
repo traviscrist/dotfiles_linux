@@ -6,7 +6,7 @@ xset +fp /usr/share/fonts/local
 setxkbmap -option ctrl:nocaps
 synclient MaxTapTime=0
 
-feh --bg-scale /home/ben/Pictures/linen.png
+feh --bg-tile /home/ben/Pictures/linen.png
 
 dropbox-cli start &
 xcompmgr -c &
