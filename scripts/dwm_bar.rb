@@ -5,7 +5,7 @@ def battery
 end
 
 def time
-	return (`date +"%a %b %r"`).strip
+	return (`date +"%a %b %d %r"`).strip
 end
 
 def user
