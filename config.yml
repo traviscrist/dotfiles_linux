@@ -1,6 +1,4 @@
-My config file for dotproduct
----
-variables:  
+vars:  
   
   bg: '111111'
   fg: 'bbbbbb'
@@ -31,72 +29,72 @@ variables:
 
 files:
   Xdefaults:
-    source: home/Xdefaults
-    destination: '/home/ben/.Xdefaults'
-    delimeter: '@'
+    src: home/Xdefaults
+    dest: '/home/ben/.Xdefaults'
+    delim: '@'
 
   xinitrc:
-    source: home/xinitrc
-    destination: '/home/ben/.xinitrc'
-    delimeter: '@'
+    src: home/xinitrc
+    dest: '/home/ben/.xinitrc'
+    delim: '@'
 
   vimrc:
-    source: home/vimrc
-    destination: '/home/ben/.vimrc'
-    delimeter: '@'
+    src: home/vimrc
+    dest: '/home/ben/.vimrc'
+    delim: '@'
 
   vimperatorrc:
-    source: web/vimperatorrc
-    destination: '/home/ben/.vimperatorrc'
-    delimeter: '@'
+    src: web/vimperatorrc
+    dest: '/home/ben/.vimperatorrc'
+    delim: '@'
 
   zshrc:
-    source: home/zshrc
-    destination: '/home/ben/.zshrc'
-    delimeter: '@'
+    src: home/zshrc
+    dest: '/home/ben/.zshrc'
+    delim: '@'
 
   scripts:
-    source: scripts/
-    destination: '/home/ben/.local/bin/'
-    delimeter: '@@'
+    src: scripts/
+    dest: '/home/ben/.local/bin/'
+    delim: '@@'
 
   mpd:
-    source: home/mpd.conf
-    destination: '/home/ben/.mpdconf'
-    delimeter: '@'
+    src: home/mpd.conf
+    dest: '/home/ben/.mpdconf'
+    delim: '@'
 
   dwm:
-    source: dwm/config.h
-    destination: '/home/ben/Builds/dwm/src/config.h'
-    delimeter: '@'
+    src: dwm/config.h
+    dest: '/home/ben/Builds/dwm/src/config.h'
+    delim: '@'
 
   vimperator:
-    source: web/colors.vimp
-    destination: '/home/ben/.vimperator/colors/custom.vimp'
-    delimeter: '@'
+    src: web/colors.vimp
+    dest: '/home/ben/.vimperator/colors/custom.vimp'
+    delim: '@'
 
   ncmpcpp:
-    source: home/ncmpcpp_config
-    destination: '/home/ben/.ncmpcpp/config'
-    delimeter: '@@'
+    src: home/ncmpcpp_config
+    dest: '/home/ben/.ncmpcpp/config'
+    delim: '@@'
 
   redshift:
-    source: home/redshift.conf
-    destination: '/home/ben/.config/redshift.conf'
-    delimeter: '@'
+    src: home/redshift.conf
+    dest: '/home/ben/.config/redshift.conf'
+    delim: '@'
 
   home_html:
-    source: web/home.html
-    destination: '/home/ben/.homepage/home.html'
-    delimeter: '@@'
+    src: web/home.html
+    dest: '/home/ben/.homepage/home.html'
+    delim: '@@'
 
   home_css:
-    source: web/home.css
-    destination: '/home/ben/.homepage/home.css'
-    delimeter: '@@'
+    src: web/home.css
+    dest: '/home/ben/.homepage/home.css'
+    delim: '@@'
 
 scripts:
   
   redwm:
-    command: '/home/ben/.local/bin/redwm.sh'
+    cmd: '/home/ben/.local/bin/redwm.sh'
     target: dwm
