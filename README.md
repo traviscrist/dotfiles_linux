@@ -7,7 +7,7 @@ These are the dotfiles belonging to me, Ben. They are organized into a few folde
   * `web` is used for config files and a home page for web browsing.
   * `dwm` is the config.h file for my window manager, of choice, dwm.
 
-You can install these files by running `./dotproduct.pl config.yml`.
+You can install these files by running `./dotproduct.rb config.yml`.
 This will use the information stored in `config.yml` to place the files
 in your home directory.
 
