@@ -1,7 +1,11 @@
+" Options
+
+" display
 syntax on
 colorscheme jellybeans
 set number
 
+" editing
 set expandtab
 set tabstop=2
 set softtabstop=2
@@ -9,5 +13,43 @@ set sw=2
 set shiftround
 set mouse=a
 
+" Key Bindings
+
+" variables
+let mapleader = ","
+let maplocalleader = "\\"
+
+" editing vimrc
+nnoremap <leader>ve :split ~/Documents/dotfiles/home/vimrc<cr>
+nnoremap <leader>vs :!dotproduct >/dev/null<cr><cr>:source $MYVIMRC<cr>
+
+" normal bindings
+noremap <c-u> viwU
+nnoremap H 0
+nnoremap L $
+nnoremap <leader>r :r!
+
+" surrounding
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
+nnoremap <leader>{ viw<esc>a}<esc>hbi{<esc>lel
+nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
+nnoremap <leader>< viw<esc>a><esc>hbi<<esc>lel
+
+" Automatic Bindings
+augroup everything
+autocmd!
+
+" buffers
 autocmd BufWrite * mkview
 autocmd BufRead  * silent loadview
+
+" commenting
+autocmd FileType {javascript,c,cpp} nnoremap <buffer> <localleader>c I//<esc>
+autocmd FileType {python,ruby,sh,perl} nnoremap <buffer> <localleader>c I#<esc>
+autocmd FileType vim nnoremap <buffer> <localleader>c I"<esc>
+autocmd FileType plaintex nnoremap <buffer> <localleader>c I%<esc>
+
+" End Automatic Bindings
+augroup END
