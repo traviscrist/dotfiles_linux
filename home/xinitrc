@@ -10,6 +10,7 @@ feh --bg-tile /home/ben/Pictures/linen.png
 
 dropbox-cli start &
 xcompmgr -c &
+pulseaudio --start
 mpd &
 dwm_bar.rb &
 redshift -l 38:-122 &
