@@ -1,0 +1,101 @@
+#!/usr/bin/env perl
+use warnings;
+use strict;
+no warnings 'experimental::smartmatch';
+binmode STDOUT, ':utf8';
+
+my @names = (     "Jo",   "Ni",   "Ky",   "Ma",   "Na",   "Li",   "Pe",   "Ia",   "Ev",   "To",   "Er",   "Em");
+my @namecolors = ("\x09", "\x08", "\x07", "\x0c", "\x0b", "\x0d", "\x0a", "\x06", "\x07", "\x05", "\x03", "\x04");
+sub friend_list {
+	my @lines = @_;
+
+	my @online = ();
+	foreach (@lines) { 
+		my $id = substr $_, 0, 2;	
+		push @online, $id if ($id ~~ @names); 
+	}
+	my $ret = '';
+	foreach (my $i = 0; $i < @names; ++$i) {
+		$ret .= "$namecolors[$i]$names[$i]" if ($names[$i] ~~ @online);
+	}
+	return $ret;
+}
+#####################
+
+my %colors = (
+	"white" => "\x01",
+	"green" => "\x04",
+	"yellow" => "\x07",
+	"bg" => "\x02",
+	"lblue" => "\x0b",
+	"dblue" => "\x03",
+	"lred" => "\x05",
+	"dred" => "\x08",
+	"orange" => "\x0a",
+);
+my $begin = "\x02 ";
+
+sub print_battery {
+	if (`acpi` =~ /Battery \d+:(.*), (\d+)%/i) {
+		my $percent = int ($2);
+		my $glyph = '';
+
+		     if ($percent > 75) { $glyph = "\x{E033}";
+		} elsif ($percent > 50) { $glyph = "\x{E032}";
+		} elsif ($percent > 25) { $glyph = "\x{E031}";
+		} else                  { $glyph = "\x{E030}";
+		}
+
+		return "$begin$colors{orange} $glyph$colors{yellow}$percent%";
+	} else {
+		return '';
+	}
+}
+sub print_song {
+	my $glyph = "\x{E0FE}";
+
+	my $song  = `mpc --format '%title%' | head -n 1`;
+	$song = 'n/a' if ($song =~ /volume: n\/a/);
+	chomp $song;
+	
+	return "$begin$colors{lblue} $glyph$colors{dblue}$song";
+}
+sub print_skype {
+	my $unread = int(`skypenotify unread`);
+	my $glyph = ($unread > 0)? "\x{E19F}":"\x{E0AD}";
+	
+	return "$begin$colors{green} $glyph$colors{yellow}$unread";
+}
+sub print_gmail {
+	my $unread = int(`find /home/ben/Mail/Gmail/INBOX/new/ -type f | wc -l`);
+	my $glyph = ($unread > 0)? "\x{E072}":"\x{E073}";
+
+	return "$begin$colors{lred} $glyph$colors{dred}$unread";
+}
+sub print_time {
+	my $glyph = "\x{E015}";
+	
+	my $time = `date +%F` . "$colors{yellow}" . `date +%I:%M:%S`;
+	chomp $time;
+
+	return "$begin$colors{orange} $glyph$colors{yellow}$time";
+}
+sub print_friends {
+	#my $glyph = "\x{E0DE}";
+	my $archglyph = "\x{E00E}";
+
+	my $friends = friend_list(`skypenotify online`);
+	
+	return "$begin$colors{orange} $friends $colors{lblue}$archglyph$colors{green}ben";
+}
+
+while (1) {
+	my $b = print_battery() .
+		print_song() . 
+		print_skype() .
+		print_gmail() .
+		print_time() .
+		print_friends();
+	system(('xsetroot', '-name', $b));
+	system(('sleep','1'));
+}

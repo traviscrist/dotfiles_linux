@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wmname LG3D
+exec ~/Builds/pcgen/pcgen.sh

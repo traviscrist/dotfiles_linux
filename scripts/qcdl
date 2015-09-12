@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+
+if [[ $# -ne 2 ]]; then
+  echo "Invalid parameters." >&2
+  exit 
+fi
+
+#echo "Downloading info..."
+#youtube-dl -F $1 | grep -P "^[^\[]"
+fmt=141
+#read -p "Enter desired format: " fmt
+
+echo "Downloading video..."
+youtube-dl --output "%(id)s" -f $fmt $1
+
+echo "Converting video..."
+ffmpeg -i "$1" -f flac "$2.flac"
+
+echo "Cleaning up..."
+rm "$1"
+
+echo "Setting tags..."
+id3v2 --artist "Quad City DJs" "$2.flac"
+id3v2 --album "VS." "$2.flac"
+id3v2 --song "$(echo $2 | sed "s/\-/ /g" | sed "s/\..*//g")" "$2.flac"
+
+echo "Complete!"

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+while [ 1 ]; do
+
+	#contacts=$(/home/ben/.skypescripts/printstatus.pl "`cat /home/ben/.skypestatus`")
+	#xsetroot -name "$(\
+	#echo -e "\x01$contacts\x01 `date +%F` `date +%I:%M:%S` `date +%p`\x04 Ben"
+	#)"
+	#sleep 1	
+
+	xsetroot -name "\
+$(	echo -en "\x02 \x0b\x0a $(acpi)")\
+$(
+	echo -en "\x02 \x0b\x03 $(mpc --format '%title%' | head -n 1)")\
+$(
+	echo -en "\x02 "
+	message_count=$(skypenotify unread)
+	echo -en "\x04 skype: $message_count")\
+$(
+	unread_count_newline=$(find /home/ben/Mail/Gmail/INBOX/new/ -type f | wc -l)
+	unread_count=${unread_count_newline%"\n"}
+	echo -en "\x02 "
+	echo -en "\x08 gmail: $unread_count")\
+$(echo -en "\x02 \x07 $(date +%F) $(date +%I:%M:%S)")\
+$(echo -en "\x02 \x0b $(skypenotify online | /home/ben/.skypescripts/printstatus.pl)")\
+$(echo -en "\x04 $USER\x02 \x02")\
+"
+
+sleep 1
+done

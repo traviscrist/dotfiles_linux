@@ -10,12 +10,4 @@ cd $(dirname $1)
 file=$(basename $1)
 newfile="${file%.*}.html"
 
-echo "renaming $file to $newfile..."
 node ~/Documents/prog/js/kmark/kmark.js -h "$file" > "$newfile"
-
-echo "uploading to pierogi.reed.edu:~/html/notes ..."
-scp "$newfile" bensharaf@pierogi.reed.edu:~/html/notes/
-ssh bensharaf@pierogi.reed.edu 'bash ~/bin/gennotes'
-
-echo "cleaning up..."
-rm "$newfile"
