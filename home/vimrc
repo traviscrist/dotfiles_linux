@@ -27,7 +27,14 @@ nnoremap <leader>vs :!dotproduct >/dev/null<cr><cr>:source $MYVIMRC<cr>
 noremap <c-u> viwU
 nnoremap H 0
 nnoremap L $
+nnoremap J } 
+nnoremap K {
+vnoremap H 0
+vnoremap L $
+vnoremap J } 
+vnoremap K {
 nnoremap <leader>r :r!
+nnoremap <leader>f gqip
 
 " surrounding
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
@@ -49,7 +56,7 @@ autocmd BufRead  * silent loadview
 autocmd FileType {javascript,c,cpp} nnoremap <buffer> <localleader>c I//<esc>
 autocmd FileType {python,ruby,sh,perl} nnoremap <buffer> <localleader>c I#<esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I"<esc>
-autocmd FileType plaintex nnoremap <buffer> <localleader>c I%<esc>
+autocmd FileType {tex,plaintex} nnoremap <buffer> <localleader>c I%<esc>
 
 " End Automatic Bindings
 augroup END
