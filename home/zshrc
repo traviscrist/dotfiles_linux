@@ -41,6 +41,7 @@ alias htop="htop -d2"
 alias redwm='cd ~/Builds/dwm; updpkgsums; makepkg -efi --noconfirm && killall dwm'
 alias bc="bc -q"
 alias gdb="gdb -q"
+alias glog="git log --pretty=oneline"
 
 alias mp="mousepad 2>/dev/null >/dev/null"
 
