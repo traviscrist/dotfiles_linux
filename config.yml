@@ -63,10 +63,14 @@ files:
     dest: '/home/ben/.mpdconf'
     delim: '@'
 
-  dwm:
+  dwm_config:
     src: dwm/config.h
     dest: '/home/ben/Builds/dwm/src/config.h'
     delim: '@'
+  dwm_dwm_c:
+    src: dwm/dwm.c
+    dest: '/home/ben/Builds/dwm/src/dwm-6.0/dwm.c'
+    delim: '@@'
 
   vimperator:
     src: web/colors.vimp

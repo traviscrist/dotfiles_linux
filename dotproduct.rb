@@ -19,16 +19,17 @@ class Config
         a + ((i % 2 == 1)? (@conf["vars"][p]):(p))
     end
     IO.write(e["dest"], t)
-    printf("%#{@len}s -> #{e["dest"]}\n", e["src"])
+    printf("%#{@len}s -> #{e["dest"]}\n", e["src"]) if @verbose
   end
   def run()
     @conf["files"].each {|k,e| File.directory?(e["src"])? do_dir(e):do_file(e) }
     @conf["scripts"].each {|k,scr| `#{scr["cmd"]}` if @target == scr["target"]}
-    puts("complete!")
+    puts("complete!") if @verbose
   end
   def initialize(filename, target)
     @conf = YAML.load(IO.read(filename))
     @target = target
+    @verbose = false
     @len = @conf["files"].map{|k,f| f["src"]}.map{|d|
       File.directory?(d)? Dir.entries(d).reduce{|a,f|
         ((f + d).length > a.length)? (f + d):(a)

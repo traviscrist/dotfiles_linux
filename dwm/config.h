@@ -39,13 +39,17 @@ static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#444444";
 static const char selbgcolor[]      = "#444444";
 static const char selfgcolor[]      = "#eeeeee";
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "term", "web", "prog", "comm", "music", "misc" };
+static const char *tags[] = {
+  " \xee\x85\x8a ", " \xee\x85\x8b ", " \xee\x83\x84 ",
+  " \xee\x84\xb3 ", " \xee\x86\x9f ", " \xee\x81\x8d ",
+  " * "
+};
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -61,9 +65,9 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "     \xee\x80\x82     ",      tile },    /* first entry is default */
+	{ "     \xee\x82\xb1     ",      NULL },    /* no layout function means floating behavior */
+	{ "     \xee\x80\x80 0   ",      monocle },
 };
 
 /* key definitions */

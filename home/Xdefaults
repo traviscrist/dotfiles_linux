@@ -35,7 +35,7 @@
 
 !------------ URxvt ----------------
 
-URxvt*font: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+URxvt*font: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1,-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
 URxvt*boldFont: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
 URxvt*italicFont: -*-dina-medium-r-*-*-10-*-*-*-*-*-iso8859-1
 
@@ -44,5 +44,5 @@ URxvt*scrollBar: false
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/chromium
-URxvt.matcher.buttom: 1
+URxvt.matcher.button: 1
 URxvt.colorURL: #@lcyan@
