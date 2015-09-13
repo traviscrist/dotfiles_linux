@@ -1,0 +1,5 @@
+#!/bin/bash
+mpc pause
+scrot /tmp/screen.png
+convert /tmp/screen.png -scale 25% -scale 400% /tmp/screen.png
+i3lock -f -i /tmp/screen.png

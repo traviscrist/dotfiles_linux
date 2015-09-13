@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$1" = "server" ]]; then
+  python2 ~/Builds/Skype-Notify-CLI/skypenotify-server.py 2>/dev/null &
+  disown
+elif [[ "$1" = "exit" ]]; then
+  killall python2
+else
+  python2 ~/Builds/Skype-Notify-CLI/skypenotify.py $@
+fi
