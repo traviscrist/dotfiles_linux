@@ -48,7 +48,7 @@ static const Bool topbar            = True;     /* False means bottom bar */
 static const char *tags[] = {
   " \xee\x85\x8a ", " \xee\x85\x8b ", " \xee\x83\x84 ",
   " \xee\x84\xb3 ", " \xee\x86\x9f ", " \xee\x81\x8d ",
-  " * "
+  "   "
 };
 
 static const Rule rules[] = {
@@ -65,9 +65,9 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "     \xee\x80\x82     ",      tile },    /* first entry is default */
-	{ "     \xee\x82\xb1     ",      NULL },    /* no layout function means floating behavior */
-	{ "     \xee\x80\x80 0   ",      monocle },
+	{ " \xee\x80\x82   ",      tile },    /* first entry is default */
+	{ " \xee\x82\xb1   ",      NULL },    /* no layout function means floating behavior */
+	{ " \xee\x80\x80 0 ",      monocle },
 };
 
 /* key definitions */
@@ -93,6 +93,7 @@ static const char *MY_sleepcmd[] = { "/home/ben/Documents/dotfiles/scripts/sleep
 static const char *MY_redshiftcmd[] = { "/home/ben/Documents/dotfiles/scripts/redshift.sh", NULL };
 
 static const char *MY_touchpadcmd[] = { "/home/ben/Documents/dotfiles/scripts/touchpad_toggle", NULL };
+static const char *MY_lockcmd[] = { "/home/ben/Documents/dotfiles/scripts/lock", NULL };
 
 static const char *MY_nextcmd[] = { "mpc", "next", NULL };
 static const char *MY_prevcmd[] = { "mpc", "prev", NULL };
@@ -142,6 +143,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_Delete, spawn, 	   {.v = MY_sleepcmd} },
 	{ MODKEY,			XK_r,      spawn, 	   {.v = MY_redshiftcmd} },
 	{ MODKEY,			XK_c,      spawn, 	   {.v = MY_touchpadcmd} },
+	{ MODKEY,			XK_Escape, spawn, 	   {.v = MY_lockcmd} },
 };
 
 /* button definitions */
