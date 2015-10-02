@@ -61,7 +61,7 @@ files:
   mpd:
     src: home/mpd.conf
     dest: '/home/ben/.mpdconf'
-    delim: '@'
+    delim: '@@'
 
   dwm_config:
     src: dwm/config.h
@@ -97,8 +97,16 @@ files:
     dest: '/home/ben/.homepage/home.css'
     delim: '@@'
 
+  ghci:
+    src: home/ghci
+    dest: '/home/ben/.ghci'
+    delim: '@@'
+
 scripts:
   
   redwm:
     cmd: '/home/ben/.local/bin/redwm.sh'
     target: dwm
+
+  chmod:
+    cmd: 'chmod +x /home/ben/.local/bin/*'

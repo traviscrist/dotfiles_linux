@@ -1,0 +1,7 @@
+#!/usr/bin/python3 -i
+
+from math import *
+import sys
+
+sys.ps1 = "\uE05A "
+sys.ps2 = "... "

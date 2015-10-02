@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+if [[ $# -ne 3 ]]; then
+  echo "usage: $0 <file> <artist> <song>" >&2
+  exit
+fi
+
+newf="${1%.*}.flac"
+
+echo "Converting video..."
+ffmpeg -i "$1" -f flac "$newf"
+
+echo "Setting Tags..."
+id3v2 --artist "Youtube" "$newf"
+id3v2 --album "$2" "$newf"
+id3v2 --song "$3" "$newf"
+
+echo "Cleaning up..."
+rm "$1"
+
+mv "./$newf" "/home/$USER/Music/Youtube/$newf"
+mpc update >/dev/null
+
+echo "Done!"

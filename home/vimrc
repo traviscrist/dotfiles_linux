@@ -21,7 +21,7 @@ let maplocalleader = "\\"
 
 " editing vimrc
 nnoremap <leader>ve :split ~/Documents/dotfiles/home/vimrc<cr>
-nnoremap <leader>vs :!dotproduct >/dev/null<cr><cr>:source $MYVIMRC<cr>
+nnoremap <leader>vs :!dot<cr><cr>:source $MYVIMRC<cr>
 
 " normal bindings
 noremap <c-u> viwU
