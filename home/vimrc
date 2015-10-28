@@ -58,5 +58,8 @@ autocmd FileType {python,ruby,sh,perl} nnoremap <buffer> <localleader>c I#<esc>
 autocmd FileType vim nnoremap <buffer> <localleader>c I"<esc>
 autocmd FileType {tex,plaintex} nnoremap <buffer> <localleader>c I%<esc>
 
+" compile or run
+autocmd FileType {tex,plaintex} nnoremap <buffer> <localleader>r :!pdflatex %<esc>
+
 " End Automatic Bindings
 augroup END

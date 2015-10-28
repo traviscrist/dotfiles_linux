@@ -26,6 +26,7 @@ bindkey -e
 export PATH=$PATH:~/.local/bin
 export PATH="/home/ben/.bin:$PATH";
 export PATH="/home/ben/.cabal/bin:$PATH";
+export PATH="/usr/lib/smlnj/bin:$PATH";
 
 export EDITOR="vim"
 #export BROWSER=/usr/bin/dwb
