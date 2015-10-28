@@ -45,6 +45,12 @@ def song
   return "\ue04d " + song[0].gsub("'", "").strip
 end
 
+def volume
+  volume = Scmd.run()[-1].split(" ")[1]
+  return "\ue050 #{volume}" if volume =~ /\d+%/
+  return "\ue050 N/A"
+end
+
 def user
   p = Pcmd.run()
 	return "\ue00e ben" if p.length == 0
@@ -54,6 +60,7 @@ end
 def bar
 	return [
     song(),
+    volume(),
     unread(),
     battery(),
     time(),
