@@ -99,6 +99,9 @@ static const char *MY_nextcmd[] = { "mpc", "next", NULL };
 static const char *MY_prevcmd[] = { "mpc", "prev", NULL };
 static const char *MY_stopcmd[] = { "mpc", "toggle", NULL };
 
+static const char *MY_vdowncmd[] = { "mpc", "volume", "-2", NULL };
+static const char *MY_vupcmd[] = { "mpc", "volume", "+2", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -118,8 +121,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+	{ MODKEY,                       XK_8,      view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_8,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
@@ -132,7 +135,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,         	XK_r,      quit,           {0} }, // only restarts dwm
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = MY_quitcmd} }, // kills all
 	{ MODKEY|ShiftMask,		XK_p,	   MY_togglepadding,  {0} }, // toggle padding
@@ -144,6 +146,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_r,      spawn, 	   {.v = MY_redshiftcmd} },
 	{ MODKEY,			XK_c,      spawn, 	   {.v = MY_touchpadcmd} },
 	{ MODKEY,			XK_Escape, spawn, 	   {.v = MY_lockcmd} },
+  { MODKEY,     XK_9,      spawn,      {.v = MY_vdowncmd} },
+  { MODKEY,     XK_0,      spawn,      {.v = MY_vupcmd} },
 };
 
 /* button definitions */
