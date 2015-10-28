@@ -42,7 +42,7 @@ end
 def song
   song = Scmd.run()
   return "\ue04d N/A" if song[0] =~ /^\[/ or song[1] =~ /^\[paused\]/
-  return "\ue04d " + song[0].strip
+  return "\ue04d " + song[0].gsub("'", "").strip
 end
 
 def user
