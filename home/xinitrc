@@ -14,7 +14,7 @@ xcompmgr -c &
 pulseaudio --start
 mpd &
 dwm_bar.rb &
-redshift -l 38:-122 &
+redshift -l 45:122 &
 
 #sxhkd &
 exec startdwm

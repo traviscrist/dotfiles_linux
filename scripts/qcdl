@@ -8,7 +8,7 @@ fi
 
 #echo "Downloading info..."
 #youtube-dl -F $1 | grep -P "^[^\[]"
-fmt=141
+fmt=140
 #read -p "Enter desired format: " fmt
 
 echo "Downloading video..."

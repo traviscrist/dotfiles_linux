@@ -61,5 +61,9 @@ autocmd FileType {tex,plaintex} nnoremap <buffer> <localleader>c I%<esc>
 " compile or run
 autocmd FileType {tex,plaintex} nnoremap <buffer> <localleader>r :!pdflatex %<esc>
 
+" Syntax
+autocmd BufNewFile,Bufread *.exs set syntax=elixir
+autocmd BufNewFile,Bufread *.ex set syntax=elixir
+
 " End Automatic Bindings
 augroup END

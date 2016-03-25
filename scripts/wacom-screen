@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ $@ -ne 2 ]]; then
+  echo "usage: wacom-screen <screen number>"
+  exit 1
+fi
+
+mapwacom --device-regex=".*" --screen=HDMI$1
