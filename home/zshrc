@@ -9,6 +9,9 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl false
 zstyle :compinstall filename '/home/ben/.zshrc'
 
+export fpath=(/home/ben/Documents/prog/cd-memo/zsh $fpath)
+source /home/ben/Documents/prog/cd-memo/cd-memo
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -48,6 +51,7 @@ alias glog="git log --pretty=oneline"
 alias cobol="cobc -Ox -free"
 alias sml="rlwrap sml"
 alias ocaml="rlwrap ocaml"
+alias pdflatex="pdflatex -interaction=nonstopmode"
 
 alias mp="mousepad 2>/dev/null >/dev/null"
 alias notes="vim ~/Documents/misc/notes.txt"
@@ -85,4 +89,6 @@ export PATH=$ANT_ROOT:$PATH
 export GOPATH=~/Builds/go
 export PATH=$PATH:~/Builds/go
 
-export SKELTAL_DIR=/home/ben/Documents/prog/mr-skeltal/skel
+export SKELTAL_DIR=/home/ben/Documents/dotfiles/skeltal
+
+export CD_MEMO=/home/ben/Documents/dotfiles/home/cd_memo.txt

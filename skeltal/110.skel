@@ -1,0 +1,28 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{ifpdf} 
+\usepackage{verbatim}
+\usepackage{mla}
+
+\begin{document} \begin{mla}{Ben}{Sharafian}{Humanities 110 Spring 2016 T-Th
+1:10-2:30}{Ralph Drayton}{Essay N}{Title}
+
+\begin{comment}
+
+%Topic:
+
+%Thesis: 
+
+%Points:
+
+%Quotes:
+
+\end{comment}
+
+% Introduction
+% Thesis
+
+
+% Conclusion
+
+\end{mla}
+\end{document}
