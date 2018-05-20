@@ -17,6 +17,7 @@ xrdb ~/.Xresources
 # mpd &
 # dwm_bar.rb &
 # redshift -l 45:122 &
+bar &
 
 #sxhkd &
 exec startdwm
