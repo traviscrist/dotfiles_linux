@@ -1,5 +1,5 @@
 #!/bin/bash
 
 while true; do
-	dwm 2>/dev/null
+	/home/sharafian/Builds/dwm/dwm 2>/dev/null
 done

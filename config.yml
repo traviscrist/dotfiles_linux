@@ -1,112 +1,92 @@
 vars:  
   
-  bg: '111111'
-  fg: 'bbbbbb'
+  bg: 'fdf6e3'
+  fg: '586e75'
 
-  dblack: '393939'
-  lblack: '535551'
+  dblack: '073642'
+  lblack: '002b36'
 
-  dred: 'ca674a'
-  lred: 'ea2828'
+  dred: 'dc322f'
+  lred: 'cb4b16'
 
-  dgreen: '96a967'
-  lgreen: '87dd32'
+  dgreen: '859900'
+  lgreen: '586e75'
 
-  dyellow: 'd3a94a'
-  lyellow: 'f7e44d'
+  dyellow: 'b58900'
+  lyellow: '657b83'
 
-  dblue: '5778c1'
-  lblue: '6f9bca'
+  dblue: '268bd2'
+  lblue: '839496'
 
-  dpurple: '9c35ac'
-  lpurple: 'a97ca4'
+  dpurple: 'd33682'
+  lpurple: '6c71c4'
 
-  dcyan: '6eb5f3'
-  lcyan: '32dddd'
+  dcyan: '2aa198'
+  lcyan: '93a1a1'
 
-  dwhite: 'a9a9a9'
-  lwhite: 'e9e9e7'
+  dwhite: 'eee8d5'
+  lwhite: 'fdf6e3'
 
 files:
+  alacritty:
+    src: home/alacritty.yml
+    dest: '/home/sharafian/.config/alacritty/alacritty.yml'
+    delim: '@'
+
   Xdefaults:
     src: home/Xdefaults
-    dest: '/home/ben/.Xdefaults'
+    dest: '/home/sharafian/.Xdefaults'
     delim: '@'
 
   xinitrc:
     src: home/xinitrc
-    dest: '/home/ben/.xinitrc'
+    dest: '/home/sharafian/.xinitrc'
     delim: '@'
 
   vimrc:
     src: home/vimrc
-    dest: '/home/ben/.vimrc'
-    delim: '@'
-
-  vimperatorrc:
-    src: web/vimperatorrc
-    dest: '/home/ben/.vimperatorrc'
+    dest: '/home/sharafian/.vimrc'
     delim: '@'
 
   zshrc:
     src: home/zshrc
-    dest: '/home/ben/.zshrc'
+    dest: '/home/sharafian/.zshrc'
     delim: '@'
 
   scripts:
     src: scripts/
-    dest: '/home/ben/.local/bin/'
+    dest: '/home/sharafian/.local/bin/'
     delim: '@@'
 
   mpd:
     src: home/mpd.conf
-    dest: '/home/ben/.mpdconf'
+    dest: '/home/sharafian/.mpdconf'
     delim: '@@'
 
   dwm_config:
     src: dwm/config.h
-    dest: '/home/ben/Builds/dwm/src/config.h'
+    dest: '/home/sharafian/Builds/dwm/config.h'
     delim: '@'
   dwm_dwm_c:
     src: dwm/dwm.c
-    dest: '/home/ben/Builds/dwm/src/dwm-6.0/dwm.c'
+    dest: '/home/sharafian/Builds/dwm/dwm.c'
     delim: '@@'
-
-  vimperator:
-    src: web/colors.vimp
-    dest: '/home/ben/.vimperator/colors/custom.vimp'
-    delim: '@'
 
   ncmpcpp:
     src: home/ncmpcpp_config
-    dest: '/home/ben/.ncmpcpp/config'
+    dest: '/home/sharafian/.ncmpcpp/config'
     delim: '@@'
 
   redshift:
     src: home/redshift.conf
-    dest: '/home/ben/.config/redshift.conf'
+    dest: '/home/sharafian/.config/redshift.conf'
     delim: '@'
-
-  home_html:
-    src: web/home.html
-    dest: '/home/ben/.homepage/home.html'
-    delim: '@@'
-
-  home_css:
-    src: web/home.css
-    dest: '/home/ben/.homepage/home.css'
-    delim: '@@'
-
-  ghci:
-    src: home/ghci
-    dest: '/home/ben/.ghci'
-    delim: '@@'
 
 scripts:
   
   redwm:
-    cmd: '/home/ben/.local/bin/redwm.sh'
+    cmd: '/home/sharafian/.local/bin/redwm.sh'
     target: dwm
 
   chmod:
-    cmd: 'chmod +x /home/ben/.local/bin/*'
+    cmd: 'chmod +x /home/sharafian/.local/bin/*'

@@ -2,7 +2,7 @@
 
 " display
 syntax on
-colorscheme jellybeans
+colorscheme solarized
 set number
 set ruler
 

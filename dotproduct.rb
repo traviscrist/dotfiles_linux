@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
+Encoding.default_internal = Encoding::UTF_8
+Encoding.default_external = Encoding::UTF_8
 
 require 'yaml'
 
@@ -14,7 +17,7 @@ class Config
     end
   end
   def do_file(e)
-    t = IO.read(e["src"]).split(e["delim"]).each.with_index
+    t = IO.read(e["src"]).force_encoding(Encoding::UTF_8).split(e["delim"]).each.with_index
     .inject("") do |a, (p, i)|
         a + ((i % 2 == 1)? (@conf["vars"][p]):(p))
     end

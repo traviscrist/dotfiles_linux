@@ -10,7 +10,6 @@ zstyle ':completion:*' use-compctl false
 zstyle :compinstall filename '/home/ben/.zshrc'
 
 export fpath=(/home/ben/Documents/prog/cd-memo/zsh $fpath)
-source /home/ben/Documents/prog/cd-memo/cd-memo
 
 autoload -Uz compinit
 compinit
@@ -33,6 +32,7 @@ export PATH="/home/ben/.cabal/bin:$PATH";
 export PATH="/usr/lib/smlnj/bin:$PATH";
 export PATH="/home/ben/.gem/ruby/2.3.0/bin:$PATH";
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="vim"
 #export BROWSER=/usr/bin/dwb
 
@@ -52,6 +52,8 @@ alias cobol="cobc -Ox -free"
 alias sml="rlwrap sml"
 alias ocaml="rlwrap ocaml"
 alias pdflatex="pdflatex -interaction=nonstopmode"
+alias gadd="git add"
+alias gst="git status"
 
 alias mp="mousepad 2>/dev/null >/dev/null"
 alias notes="vim ~/Documents/misc/notes.txt"

@@ -1,21 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
-/* appearance */
-static unsigned int borderpx  = 4;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "inconsolata:size=14" };
-static const char dmenufont[]       = "inconsolata:size=14";
-static const char col_gray1[]       = "#@bg@";
-static const char col_gray2[]       = "#@bg@";
-static const char col_gray3[]       = "#@fg@";
-static const char col_gray4[]       = "#@bg@";
-static const char col_cyan[]        = "#@dwhite@";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray3 },
-	[SchemeSel]  = { col_gray3, col_cyan,  col_gray3  },
+#define NUMCOLORS         13
+static const char colors[NUMCOLORS][ColLast][8] = {
+  // border      foreground   background
+  { "#444444",   "#bbbbbb",   "#111111" },  // normal
+  { "#888888",   "#ffffff",   "#444444" },  // selected
 
   { "#000000",   "#@dcyan@",   "#111111" },  
   { "#000000",   "#@lgreen@",   "#111111" },  
@@ -42,30 +31,43 @@ static const char *colors[][3]      = {
   { "#000000",   "#@dpurple@",   "#222222" }   
 };
 
+/* appearance */
+static const char font[]            = "-*-dina-medium-r-normal-*-10-*-*-*-*-*-*-*";
+static const char normbordercolor[] = "#111111";
+static const char normbgcolor[]     = "#111111";
+static const char normfgcolor[]     = "#bbbbbb";
+static const char selbordercolor[]  = "#444444";
+static const char selbgcolor[]      = "#444444";
+static const char selfgcolor[]      = "#eeeeee";
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int snap      = 16;       /* snap pixel */
+static const Bool showbar           = True;     /* False means no bar */
+static const Bool topbar            = True;     /* False means bottom bar */
+
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = {
+  " \xee\x85\x8a ", " \xee\x85\x8b ", " \xee\x83\x84 ",
+  " \xee\x84\xb3 ", " \xee\x86\x9f ", " \xee\x81\x8d ",
+  "   "
+};
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "MPlayer",  NULL,       NULL,       0,            True,        -1 },
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
+	{ "Firefox",  NULL,       NULL,       0,       	    False,       -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
+static const int nmaster      = 1;    /* number of clients in master area */
+static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ " \xee\x80\x82   ",      tile },    /* first entry is default */
+	{ " \xee\x82\xb1   ",      NULL },    /* no layout function means floating behavior */
+	{ " \xee\x80\x80 0 ",      monocle },
 };
 
 /* key definitions */
@@ -80,9 +82,25 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/bash", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+/*static const char *termcmd[]  = { "termite", NULL };*/
+static const char *termcmd[]  = { "urxvt", NULL };
+
+static const char *MY_quitcmd[]     = { "killall", "startdwm", NULL };
+static const char *MY_dissmisscmd[] = { "pkill", "dzen2", NULL };
+
+static const char *MY_sleepcmd[] = { "/home/ben/Documents/dotfiles/scripts/sleep.sh", NULL };
+static const char *MY_redshiftcmd[] = { "/home/ben/Documents/dotfiles/scripts/redshift.sh", NULL };
+
+static const char *MY_touchpadcmd[] = { "/home/ben/Documents/dotfiles/scripts/touchpad_toggle", NULL };
+static const char *MY_lockcmd[] = { "/home/ben/Documents/dotfiles/scripts/lock", NULL };
+
+static const char *MY_nextcmd[] = { "mpc", "next", NULL };
+static const char *MY_prevcmd[] = { "mpc", "prev", NULL };
+static const char *MY_stopcmd[] = { "mpc", "toggle", NULL };
+
+static const char *MY_vdowncmd[] = { "mpc", "volume", "-2", NULL };
+static const char *MY_vupcmd[] = { "mpc", "volume", "+2", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -103,8 +121,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
@@ -117,8 +133,19 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,         	XK_r,      quit,           {0} }, // only restarts dwm
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = MY_quitcmd} }, // kills all
+	{ MODKEY|ShiftMask,		XK_p,	   MY_togglepadding,  {0} }, // toggle padding
+	{ MODKEY,			XK_Left,   spawn,      	   {.v = MY_prevcmd} }, // toggle padding
+	{ MODKEY,			XK_Right,  spawn,	   {.v = MY_nextcmd} }, // toggle padding
+	{ MODKEY,			XK_Down,   spawn,	   {.v = MY_stopcmd} }, // toggle padding
+	{ MODKEY,			XK_c,	   spawn, 	   {.v = MY_dissmisscmd} },
+	{ MODKEY,			XK_Delete, spawn, 	   {.v = MY_sleepcmd} },
+	{ MODKEY,			XK_r,      spawn, 	   {.v = MY_redshiftcmd} },
+	{ MODKEY,			XK_c,      spawn, 	   {.v = MY_touchpadcmd} },
+	{ MODKEY,			XK_Escape, spawn, 	   {.v = MY_lockcmd} },
+  { MODKEY,     XK_9,      spawn,      {.v = MY_vdowncmd} },
+  { MODKEY,     XK_0,      spawn,      {.v = MY_vupcmd} },
 };
 
 /* button definitions */
