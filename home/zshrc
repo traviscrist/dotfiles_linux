@@ -94,3 +94,11 @@ export PATH=$PATH:~/Builds/go
 export SKELTAL_DIR=/home/ben/Documents/dotfiles/skeltal
 
 export CD_MEMO=/home/ben/Documents/dotfiles/home/cd_memo.txt
+
+export NVM_DIR="/home/sharafian/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [[ "1" -eq 1 && -z ":0" && -e ~/.xinitrc ]]; then
+        exec startx
+fi
