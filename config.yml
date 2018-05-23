@@ -1,92 +1,85 @@
 vars:  
   
-  bg: 'fdf6e3'
-  fg: '586e75'
+  bg: '2E3440'
+  fg: 'D8DEE9'
 
-  dblack: '073642'
-  lblack: '002b36'
+  cursorText: '2E3440'
+  cursorColor: 'D8DEE9'
 
-  dred: 'dc322f'
-  lred: 'cb4b16'
+  dblack: '3B4252'
+  lblack: '4C566A'
 
-  dgreen: '859900'
-  lgreen: '586e75'
+  dred: 'BF616A'
+  lred: 'BF616A'
 
-  dyellow: 'b58900'
-  lyellow: '657b83'
+  dgreen: 'A3BE8C'
+  lgreen: 'A3BE8C'
 
-  dblue: '268bd2'
-  lblue: '839496'
+  dyellow: 'EBCB8B'
+  lyellow: 'EBCB8B'
 
-  dpurple: 'd33682'
-  lpurple: '6c71c4'
+  dblue: '81A1C1'
+  lblue: '81A1C1'
 
-  dcyan: '2aa198'
-  lcyan: '93a1a1'
+  dpurple: 'B48EAD'
+  lpurple: 'B48EAD'
 
-  dwhite: 'eee8d5'
-  lwhite: 'fdf6e3'
+  dcyan: '88C0D0'
+  lcyan: '88C0D0'
+
+  dwhite: 'E5E9F0'
+  lwhite: 'E5E9F0'
+
+  i3focbr: '5E81AC'
+  i3focbg: '5E81AC'
+
 
 files:
-  alacritty:
-    src: home/alacritty.yml
-    dest: '/home/sharafian/.config/alacritty/alacritty.yml'
-    delim: '@'
 
-  Xdefaults:
-    src: home/Xdefaults
-    dest: '/home/sharafian/.Xdefaults'
+  alacritty:
+    src: config/alacritty.yml
+    dest: '/home/travis/.config/alacritty/alacritty.yml'
     delim: '@'
 
   xinitrc:
     src: home/xinitrc
-    dest: '/home/sharafian/.xinitrc'
+    dest: '/home/travis/.xinitrc'
     delim: '@'
 
-  vimrc:
-    src: home/vimrc
-    dest: '/home/sharafian/.vimrc'
+  xresources:
+    src: home/xresources
+    dest: '/home/travis/.Xresources'
     delim: '@'
 
-  zshrc:
-    src: home/zshrc
-    dest: '/home/sharafian/.zshrc'
+  i3:
+    src: config/i3/
+    dest: '/home/travis/.config/i3/'
+    delim: '@'
+
+  polybar:
+    src: config/polybar
+    dest: '/home/travis/.config/polybar/config'
+    delim: '@'
+
+  rofi:
+    src: config/rofi
+    dest: '/home/travis/.config/rofi/config'
     delim: '@'
 
   scripts:
     src: scripts/
-    dest: '/home/sharafian/.local/bin/'
+    dest: '/home/travis/bin/'
     delim: '@@'
-
-  mpd:
-    src: home/mpd.conf
-    dest: '/home/sharafian/.mpdconf'
-    delim: '@@'
-
-  dwm_config:
-    src: dwm/config.h
-    dest: '/home/sharafian/Builds/dwm/config.h'
-    delim: '@'
-  dwm_dwm_c:
-    src: dwm/dwm.c
-    dest: '/home/sharafian/Builds/dwm/dwm.c'
-    delim: '@@'
-
-  ncmpcpp:
-    src: home/ncmpcpp_config
-    dest: '/home/sharafian/.ncmpcpp/config'
-    delim: '@@'
-
-  redshift:
-    src: home/redshift.conf
-    dest: '/home/sharafian/.config/redshift.conf'
-    delim: '@'
 
 scripts:
   
-  redwm:
-    cmd: '/home/sharafian/.local/bin/redwm.sh'
-    target: dwm
-
   chmod:
-    cmd: 'chmod +x /home/sharafian/.local/bin/*'
+    cmd: 'chmod +x /home/travis/bin/*'
+
+  redwm:
+    cmd: '/home/travis/bin/i3-set-config.sh roadwarrior'
+    target: i3
+
+  
+  noop:
+    cmd: echo Hello

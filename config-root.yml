@@ -1,0 +1,35 @@
+vars:
+
+files:
+  x11:
+    src: x11/30-touchpad.conf
+    dest: '/etc/X11/xorg.conf.d/30-touchpad.conf'
+    delim: '@'
+
+  systemd-logind:
+    src: systemd/logind.conf
+    dest: '/etc/systemd/logind.conf'
+    delim: '@'
+
+  systemd-sleep:
+    src: systemd/sleep.conf
+    dest: '/etc/systemd/sleep.conf'
+    delim: '@'
+
+  systemd-system-x1-carbon-cpu-throttling-service:
+    src: systemd/cpu-throttling.service
+    dest: '/etc/systemd/system/cpu-throttling.service'
+    delim: '@'
+
+  systemd-system-x1-carbon-cpu-throttling-timer:
+    src: systemd/cpu-throttling.timer
+    dest: '/etc/systemd/system/cpu-throttling.timer'
+    delim: '@'
+  prezto:
+    src: home/prezto/
+    dest: '/usr/lib/prezto/runcoms/'
+    delim: '#####'
+
+scripts:
+  noop:
+    cmd: echo Hello

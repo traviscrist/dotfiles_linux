@@ -1,0 +1,10 @@
+[Unit]
+Description=set cpu heating limit to 97°c every minute
+
+[Timer]
+OnActiveSec=60
+OnUnitActiveSec=60
+Unit=cpu-throttling.service
+
+[Install]
+WantedBy=timers.target

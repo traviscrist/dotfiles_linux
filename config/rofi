@@ -1,0 +1,4 @@
+rofi.combi-modi: window,drun,ssh
+rofi.modi: combi
+rofi.show-icons: true
+rofi.theme: /usr/share/rofi/themes/Adapta-Nokto.rasi
