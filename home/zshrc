@@ -95,9 +95,24 @@ export SKELTAL_DIR=/home/ben/Documents/dotfiles/skeltal
 
 export CD_MEMO=/home/ben/Documents/dotfiles/home/cd_memo.txt
 
-export NVM_DIR="/home/sharafian/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# npm config delete prefix
+# export NVM_DIR="/home/sharafian/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# FASD setup
+eval "$(fasd --init auto)"
+
+# FASD
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias c='fasd_cd -d'     # cd, same functionality as j in autojump
+alias cc='fasd_cd -d -i' # cd with interactive selection
+alias v='f -e vim'
 
 if [[ "1" -eq 1 && -z ":0" && -e ~/.xinitrc ]]; then
         exec startx
