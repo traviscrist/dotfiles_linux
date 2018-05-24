@@ -2,6 +2,9 @@
 
 MONITOR_SETTING=${1:-roadwarrior}
 
+# give chmod a sec to run
+sleep 1
+
 # Polybar doesn't like this at all
 killall -q polybar
 
@@ -12,7 +15,7 @@ case $1 in
     I3_CONFIG=roadwarrior
     ;;
   office)
-    xrandr --output DP1-2 --primary --mode 3440x1440 --pos 1920x0 --rotate normal --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output DP2 --off
+    xrandr --output DP2 --primary --mode 3440x1440 --pos 2560x0 --rotate normal --output eDP1 --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI1 --off --output DP2 --off
     I3_CONFIG=office
     ;;
   extend)
@@ -20,7 +23,7 @@ case $1 in
     I3_CONFIG=roadwarrior
     ;;
   *)
-    echo 'Usage: i3-set-config.sh roadwarrior|altwork|extend'
+    echo 'Usage: i3-set-config.sh roadwarrior|office|extend'
     exit 1
 esac
 
@@ -34,7 +37,7 @@ cat \
   > ~/.config/i3/config
 
 # Re-enable caps:escape
-setxkbmap -option caps:escape
+#setxkbmap -option caps:escape
 
 # Restart i3
 i3-msg restart

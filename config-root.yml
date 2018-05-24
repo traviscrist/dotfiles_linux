@@ -25,10 +25,16 @@ files:
     src: systemd/cpu-throttling.timer
     dest: '/etc/systemd/system/cpu-throttling.timer'
     delim: '@'
+
   prezto:
     src: home/prezto/
     dest: '/usr/lib/prezto/runcoms/'
     delim: '#####'
+
+  grub:
+    src: grub/grub
+    dest: '/etc/default/grub'
+    delim: '@'
 
 scripts:
   noop:

@@ -66,6 +66,11 @@ files:
     dest: '/home/travis/.config/rofi/config'
     delim: '@'
 
+  gtk-3.0:
+    src: config/gtk-3.0/settings.ini
+    dest: '/home/travis/.config/gtk-3.0/settings.ini'
+    delim: '@'
+
   scripts:
     src: scripts/
     dest: '/home/travis/bin/'
@@ -76,9 +81,13 @@ scripts:
   chmod:
     cmd: 'chmod +x /home/travis/bin/*'
 
-  redwm:
+  rei3road:
     cmd: '/home/travis/bin/i3-set-config.sh roadwarrior'
-    target: i3
+    target: i3-roadwarrior
+
+  rei3office:
+    cmd: '/home/travis/bin/i3-set-config.sh office'
+    target: i3-office
 
   
   noop:
