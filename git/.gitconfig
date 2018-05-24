@@ -3,3 +3,5 @@
 	name = Travis Crist
 [core]
 	excludesfile = /home/travis/.gitignore
+[branch]
+	autosetuprebase = always
