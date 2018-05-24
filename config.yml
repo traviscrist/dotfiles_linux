@@ -80,6 +80,7 @@ scripts:
   
   chmod:
     cmd: 'chmod +x /home/travis/bin/*'
+    target: execute
 
   rei3road:
     cmd: '/home/travis/bin/i3-set-config.sh roadwarrior'

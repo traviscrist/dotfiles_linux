@@ -2,8 +2,8 @@
 
 MONITOR_SETTING=${1:-roadwarrior}
 
-# give chmod a sec to run
-sleep 1
+# Chmod the scrpits dir
+chmod +x /home/travis/bin/*
 
 # Polybar doesn't like this at all
 killall -q polybar

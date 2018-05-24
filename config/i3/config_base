@@ -39,8 +39,8 @@ bindsym $mod+Shift+q kill
 #
 
 # Logout
-bindsym Control+Shift+l exec betterlockscreen -l
-#bindsym Control+Shift+l exec "~/coil/scripts/lock.sh"
+bindsym Control+Shift+l exec "~/bin/lock.sh"
+#bindsym Control+Shift+l exec betterlockscreen -l
 
 # Start xautolock
 exec --no-startup-id xset dpms 0 0 300
@@ -76,7 +76,7 @@ bindsym $mod+d exec "rofi -show combi"
 exec_always --no-startup-id "$HOME/bin/polybar-launch.sh"
 
 # Start dunst
-exec --no-startup-id dunst &
+#exec --no-startup-id dunst &
 
 # Start volnoti volume notification daemon
 exec --no-startup-id volnoti &
