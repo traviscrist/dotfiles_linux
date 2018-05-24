@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -41,6 +41,10 @@ bindsym $mod+Shift+q kill
 # Logout
 bindsym Control+Shift+l exec betterlockscreen -l
 #bindsym Control+Shift+l exec "~/coil/scripts/lock.sh"
+
+# Start xautolock
+exec --no-startup-id xset dpms 0 0 300
+exec --no-startup-id xautolock -time 5 -locker betterlockscreen -1 &
 
 # class                 border  backgr. text
 client.focused          #@i3focbr@ #@i3focbg@ #ffffff
