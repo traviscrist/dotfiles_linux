@@ -76,6 +76,11 @@ files:
     dest: '/home/travis/bin/'
     delim: '@@'
 
+  git:
+    src: git/
+    dest: '/home/travis/'
+    delim: '@@@@'
+
 scripts:
   
   chmod:

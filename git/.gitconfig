@@ -1,0 +1,5 @@
+[user]
+	email = 4206970+traviscrist@users.noreply.github.com
+	name = Travis Crist
+[core]
+	excludesfile = /home/travis/.gitignore
