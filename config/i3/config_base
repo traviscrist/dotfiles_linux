@@ -206,7 +206,7 @@ set $mode_monitor Monitors (a) Auto (w) Work, (m) Mirror, (e) Extend, (i) move I
 mode "$mode_monitor" {
     bindsym a mode "default", exec xrandr --auto, exec ~/bin/i3-set-config.sh roadwarrior
 
-    bindsym w mode "default", exec --no-startup-id ~/bin/i3-set-config.sh office, workspace $ws1, move workspace to output DP2, workspace $ws2, move workspace to output DP2, workspace $ws3, move workspace to output DP2, workspace $ws4, move workspace to output eDP1, workspace $ws5, move workspace to output DP2, workspace $ws6, move workspace to output DP2, workspace $ws7, move workspace to output DP2, workspace $ws8, move workspace to output DP2, workspace $ws9, move workspace to output DP2, workspace $ws10, move workspace to output DP2, workspace $ws1
+    bindsym w mode "default", exec --no-startup-id ~/bin/i3-set-config.sh office, workspace $ws1, move workspace to output eDP1, workspace $ws2, move workspace to output DP2, workspace $ws3, move workspace to output DP2, workspace $ws4, move workspace to output DP2, workspace $ws5, move workspace to output DP2, workspace $ws6, move workspace to output DP2, workspace $ws7, move workspace to output DP2, workspace $ws8, move workspace to output DP2, workspace $ws9, move workspace to output DP2, workspace $ws10, move workspace to output DP2, workspace $ws1
 
     bindsym m mode "default", exec --no-startup-id ~/bin/i3-set-config.sh roadwarrior, workspace $ws1, move workspace to output eDP1, workspace $ws2, move workspace to output eDP1, workspace $ws3, move workspace to output eDP1, workspace $ws4, move workspace to output eDP1, workspace $ws5, move workspace to output eDP1, workspace $ws6, move workspace to output eDP1, workspace $ws7, move workspace to output eDP1, workspace $ws8, move workspace to output eDP1, workspace $ws9, move workspace to output eDP1, workspace $ws10, move workspace to output eDP1, workspace $ws1
 
@@ -221,7 +221,6 @@ mode "$mode_monitor" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+F7 mode "$mode_monitor"
 bindsym $mod+m mode "$mode_monitor"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -247,3 +246,10 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 3
 bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
 bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
 
+# Gaps
+gaps inner 8
+gaps outer -4
+smart_gaps on
+smart_borders no_gaps
+
+for_window [class="^.*"] border pixel 1

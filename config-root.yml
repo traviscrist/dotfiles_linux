@@ -36,6 +36,11 @@ files:
     dest: '/etc/default/grub'
     delim: '@'
 
+  bluetooth:
+    src: bluetooth/main.conf
+    dest: '/etc/bluetooth/main.conf'
+    delim: '@'
+
 scripts:
   noop:
     cmd: echo Hello

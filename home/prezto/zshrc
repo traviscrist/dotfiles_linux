@@ -16,3 +16,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Customize to your needs...
+alias setup-dotfiles="~/bin/setup_dotfiles.sh" 

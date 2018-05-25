@@ -1,9 +1,9 @@
-# i3 Altwork monitor settings
+# i3 Office monitor settings
 
-workspace $ws1 output DP2
+workspace $ws1 output eDP1
 workspace $ws2 output DP2
 workspace $ws3 output DP2
-workspace $ws4 output eDP1
+workspace $ws4 output DP2
 workspace $ws5 output DP2
 workspace $ws6 output DP2
 workspace $ws7 output DP2
