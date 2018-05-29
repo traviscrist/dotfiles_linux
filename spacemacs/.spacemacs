@@ -52,8 +52,6 @@ values."
      syntax-checking
      ;; version-control
      javascript
-     (javascript :variables
-                 tern-command '("node" "/home/travis/.nvm/versions/node/v10.2.1/lib/node_modules/tern/bin/tern"))
      typescript
      shell-scripts
      )
