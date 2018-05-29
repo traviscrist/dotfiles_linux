@@ -30,8 +30,8 @@ vars:
   dwhite: 'E5E9F0'
   lwhite: 'E5E9F0'
 
-  i3focbr: '5E81AC'
-  i3focbg: '5E81AC'
+  i3focbr: 'FF8540' #'5E81AC'
+  i3focbg: 'FF8540' #'5E81AC'
 
 
 files:

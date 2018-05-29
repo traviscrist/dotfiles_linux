@@ -41,6 +41,11 @@ files:
     dest: '/etc/bluetooth/main.conf'
     delim: '@'
 
+  pacman:
+    src: pacman/pacman.conf
+    dest: '/etc/pacman.conf'
+    delim: '@'
+
 scripts:
   noop:
     cmd: echo Hello
