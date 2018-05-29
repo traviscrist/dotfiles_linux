@@ -52,6 +52,8 @@ values."
      syntax-checking
      ;; version-control
      javascript
+     (javascript :variables
+                 tern-command '("node" "/home/travis/.nvm/versions/node/v10.2.1/lib/node_modules/tern/bin/tern"))
      typescript
      shell-scripts
      )
@@ -59,7 +61,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(magithub)
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -305,10 +307,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  ;; Magithub
-  (use-package magithub
-    :after magit
-    :config (magithub-feature-autoinject t))
   ;; Javascript
   (setq-default js2-basic-offset 2
                 js-indent-level 2)
