@@ -16,7 +16,7 @@ case $1 in
     ;;
   office)
     #xrandr --output DP2 --primary --mode 3440x1440 --pos 2560x0 --rotate normal --output eDP1 --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI1 --off --output DP2 --off
-    xrandr --output DP2 --primary --mode 3440x1440 --rotate normal --above eDP1 --output eDP1 --mode 2560x1440 --rotate normal --output HDMI1 --off --output DP2 --off
+    xrandr --output DP1 --primary --mode 3840x1600 --rotate normal --above eDP1 --output eDP1 --mode 2560x1440 --rotate normal --output HDMI1 --off --output DP2 --off
     I3_CONFIG=office
     ;;
   extend)

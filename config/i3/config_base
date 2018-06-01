@@ -36,15 +36,13 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-#
-
 # Logout
 bindsym Control+Shift+l exec "~/bin/lock.sh"
 #bindsym Control+Shift+l exec betterlockscreen -l
 
 # Start xautolock
 exec --no-startup-id xset dpms 0 0 300
-exec --no-startup-id xautolock -time 5 -locker betterlockscreen -1 &
+exec --no-startup-id xautolock -time 10 -locker betterlockscreen -1 &
 
 # class                 border  backgr. text
 client.focused          #@i3focbr@ #@i3focbg@ #ffffff
