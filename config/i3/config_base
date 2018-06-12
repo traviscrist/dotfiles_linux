@@ -36,6 +36,9 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Map CAPSLOCK to ESC
+exec_always --no-startup-id setxkbmap -option caps:escape
+
 # Logout
 bindsym Control+Shift+l exec --no-startup-id gnome-screensaver-command -l
 # bindsym Control+Shift+l exec "~/bin/lock.sh"
