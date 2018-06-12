@@ -10,7 +10,7 @@ killall -q polybar
 
 case $1 in
   roadwarrior)
-    xrandr --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP2 --off --output DP2 --off
+    xrandr --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP2 --off --output DP1 --off
     xrandr --output HDMI1 --mode 1920x1080 --same-as eDP1
     I3_CONFIG=roadwarrior
     ;;

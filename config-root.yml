@@ -35,6 +35,11 @@ files:
     src: grub/grub
     dest: '/etc/default/grub'
     delim: '@'
+  
+  grub: 
+    src: grub/31_hold_shift
+    dest: '/etc/grub.d/31_hold_shift'
+    delim: '@'
 
   bluetooth:
     src: bluetooth/main.conf

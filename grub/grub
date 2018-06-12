@@ -13,8 +13,9 @@ GRUB_PRELOAD_MODULES="part_gpt part_msdos"
 #GRUB_ENABLE_CRYPTODISK=y
 
 # Uncomment to enable Hidden Menu, and optionally hide the timeout count
-GRUB_HIDDEN_TIMEOUT=1
-GRUB_HIDDEN_TIMEOUT_QUIET=true
+#GRUB_HIDDEN_TIMEOUT=1
+#GRUB_HIDDEN_TIMEOUT_QUIET=true
+GRUB_FORCE_HIDDEN_MENU="true"
 
 # Uncomment to use basic console
 GRUB_TERMINAL_INPUT=console

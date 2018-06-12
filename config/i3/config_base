@@ -37,12 +37,18 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Logout
-bindsym Control+Shift+l exec "~/bin/lock.sh"
+bindsym Control+Shift+l exec --no-startup-id gnome-screensaver-command -l
+# bindsym Control+Shift+l exec "~/bin/lock.sh"
 #bindsym Control+Shift+l exec betterlockscreen -l
+
+# Start GNOME screensaver
+exec --no-startup-id gnome-screensaver &
 
 # Start xautolock
 exec --no-startup-id xset dpms 0 0 300
-exec --no-startup-id xautolock -time 10 -locker betterlockscreen -1 &
+#exec --no-startup-id xautolock -time 10 -locker betterlockscreen -1 &
+exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command -l; xset dpms force off" -notify 5 -notifier "gnome-screensaver-command -a" &
+
 
 # class                 border  backgr. text
 client.focused          #@i3focbr@ #@i3focbg@ #ffffff
@@ -173,6 +179,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+set $resizeBy 4
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -187,10 +195,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width $resizeBy px or $resizeBy ppt
+        bindsym Down resize grow height $resizeBy px or $resizeBy ppt
+        bindsym Up resize shrink height $resizeBy px or $resizeBy ppt
+        bindsym Right resize grow width $resizeBy px or $resizeBy ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -204,7 +212,7 @@ set $mode_monitor Monitors (a) Auto (w) Work, (m) Mirror, (e) Extend, (i) move I
 mode "$mode_monitor" {
     bindsym a mode "default", exec xrandr --auto, exec ~/bin/i3-set-config.sh roadwarrior
 
-    bindsym w mode "default", exec --no-startup-id ~/bin/i3-set-config.sh office, workspace $ws1, move workspace to output eDP1, workspace $ws2, move workspace to output DP2, workspace $ws3, move workspace to output DP2, workspace $ws4, move workspace to output DP2, workspace $ws5, move workspace to output DP2, workspace $ws6, move workspace to output DP2, workspace $ws7, move workspace to output DP2, workspace $ws8, move workspace to output DP2, workspace $ws9, move workspace to output DP2, workspace $ws10, move workspace to output DP2, workspace $ws1
+    bindsym w mode "default", exec --no-startup-id ~/bin/i3-set-config.sh office, workspace $ws1, move workspace to output eDP1, workspace $ws2, move workspace to output DP1, workspace $ws3, move workspace to output DP1, workspace $ws4, move workspace to output DP1, workspace $ws5, move workspace to output DP1, workspace $ws6, move workspace to output DP1, workspace $ws7, move workspace to output DP1, workspace $ws8, move workspace to output DP1, workspace $ws9, move workspace to output DP1, workspace $ws10, move workspace to output DP1, workspace $ws1
 
     bindsym m mode "default", exec --no-startup-id ~/bin/i3-set-config.sh roadwarrior, workspace $ws1, move workspace to output eDP1, workspace $ws2, move workspace to output eDP1, workspace $ws3, move workspace to output eDP1, workspace $ws4, move workspace to output eDP1, workspace $ws5, move workspace to output eDP1, workspace $ws6, move workspace to output eDP1, workspace $ws7, move workspace to output eDP1, workspace $ws8, move workspace to output eDP1, workspace $ws9, move workspace to output eDP1, workspace $ws10, move workspace to output eDP1, workspace $ws1
 
