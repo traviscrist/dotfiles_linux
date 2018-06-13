@@ -253,9 +253,10 @@ bindsym $mod+m mode "$mode_monitor"
 for_window [class="Google-chrome"] border none
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/bin/volume.sh up #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/bin/volume.sh down #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id ~/bin/volume.sh toggle-mute # mute sound
+# use GNOME so comment these out
+#bindsym XF86AudioRaiseVolume exec --no-startup-id ~/bin/volume.sh up #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id ~/bin/volume.sh down #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id ~/bin/volume.sh toggle-mute # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3
