@@ -8,9 +8,11 @@ chmod +x /home/travis/bin/*
 # Polybar doesn't like this at all
 killall -q polybar
 
+# ADD DPI Back here? 
+
 case $1 in
   roadwarrior)
-    xrandr --output eDP1 --dpi 130 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP2 --off --output DP1 --off
+    xrandr --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP2 --off --output DP1 --off
     xrandr --output HDMI1 --mode 1920x1080 --same-as eDP1
     I3_CONFIG=roadwarrior
     ;;
@@ -27,6 +29,8 @@ case $1 in
     echo 'Usage: i3-set-config.sh roadwarrior|office|extend'
     exit 1
 esac
+
+#xrandr --output eDP1 --dpi 130
 
 # Give xrandr a second to take effect
 sleep 2

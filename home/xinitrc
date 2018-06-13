@@ -53,6 +53,6 @@ fi
 
 sh /home/travis/bin/i3-set-config.sh office
 
-xrandr --dpi 130
+#xrandr --dpi 130
 #xset +fp /usr/share/fonts
 #exec i3

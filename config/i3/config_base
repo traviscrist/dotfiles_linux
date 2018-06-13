@@ -44,13 +44,21 @@ bindsym Control+Shift+l exec --no-startup-id gnome-screensaver-command -l
 # bindsym Control+Shift+l exec "~/bin/lock.sh"
 #bindsym Control+Shift+l exec betterlockscreen -l
 
+# GNOME SETTINGS
 # Start GNOME screensaver
 exec --no-startup-id gnome-screensaver &
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id gnome-flashback
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Set Laptop DPI
+exec xrandr --output eDP1 --dpi 130
 
 # Start xautolock
 exec --no-startup-id xset dpms 0 0 300
 #exec --no-startup-id xautolock -time 10 -locker betterlockscreen -1 &
-exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command -l; xset dpms force off" -notify 5 -notifier "gnome-screensaver-command -a" &
+exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command -l; xset dpms force off" -notify 10 -notifier "gnome-screensaver-command -a" &
 
 
 # class                 border  backgr. text
@@ -256,7 +264,7 @@ bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
 bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
 
 # Gaps
-gaps inner 8
+gaps inner 6
 gaps outer -4
 smart_gaps on
 smart_borders no_gaps

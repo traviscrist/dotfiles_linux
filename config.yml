@@ -1,5 +1,5 @@
-vars:  
-  
+vars:
+
   bg: '2E3440'
   fg: 'D8DEE9'
 
@@ -81,8 +81,18 @@ files:
     dest: '/home/travis/'
     delim: '@@@@'
 
+  chrome:
+    src: config/chrome-flags.conf
+    dest: '/home/travis/.config/chrome-flags.conf'
+    delim: '@@@'
+
+  chromium:
+    src: config/chromium-flags.conf
+    dest: '/home/travis/.config/chromium-flags.conf'
+    delim: '@@@'
+
 scripts:
-  
+
   chmod:
     cmd: 'chmod +x /home/travis/bin/*'
     target: execute
@@ -95,6 +105,6 @@ scripts:
     cmd: '/home/travis/bin/i3-set-config.sh office'
     target: i3-office
 
-  
+
   noop:
     cmd: echo Hello
