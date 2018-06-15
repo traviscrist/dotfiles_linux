@@ -9,7 +9,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch one bar per monitor
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    [[ $m = "eDP1" ]] && t=right || t=
+    [[ $m = "eDP1" ]] && t=right || t=right
     MONITOR=$m TRAY=$t polybar --reload example &
   done
 else
