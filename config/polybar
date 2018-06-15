@@ -76,22 +76,6 @@ cursor-scroll = ns-resize
 type = internal/xwindow
 label = %title:0:30:...%
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = "%{T5}%{T-}  "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
 [module/filesystem]
 type = internal/fs
 interval = 25
@@ -244,19 +228,29 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+format-prefix = "   "
+label = %{F#99}%date%%{F-}   %{F#fff}%time%%{F-}
+date = %m/%d/%Y
+date-alt = %A, %B %d, %Y
+time = %I:%M %p
+time-alt = ${self.time}
 
-date = "  %Y-%m-%d"
-date-alt = "  %A, %d %B %Y"
 
-time = %k:%M
-time-alt = "%H:%M:%S %Z%z"
+# [module/date]
+# type = internal/date
+# interval = 5
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+# date = "  %Y-%m-%d"
+# date-alt = "  %A, %d %B %Y"
 
-label = %date% %time%
+# time = %k:%M
+# time-alt = "%H:%M:%S %Z%z"
+
+# format-prefix = 
+# format-prefix-foreground = ${colors.foreground-alt}
+# format-underline = #0a6cf5
+
+# label = %date% %time%
 
 [module/volume]
 type = internal/volume
@@ -371,12 +365,6 @@ menu-2-0-exec = poweroff
 
 menu-3-0 = logout
 menu-3-0-exec = i3-msg exit
-
-[module/player-mpris-simple]
-type = custom/script
-exec = ~/dotfiles/config/polybar/player-mpris-simple.sh
-interval = 3
-click-left = playerctl play-pause
 
 [settings]
 screenchange-reload = true
