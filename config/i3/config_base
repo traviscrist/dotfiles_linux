@@ -51,6 +51,9 @@ exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id gnome-flashback
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# Set Wallpaper
+exec gsettings set org.gnome.desktop.background picture-options "stretched" 
+exec gsettings set org.gnome.desktop.background picture-uri file:///home/travis/dotfiles/wallpapers/aircraft-1528992966774-7723.jpg
 
 # Set Laptop DPI
 exec xrandr --output eDP1 --dpi 130
