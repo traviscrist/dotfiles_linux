@@ -58,7 +58,7 @@ exec xrandr --output eDP1 --dpi 130
 # Start xautolock
 exec --no-startup-id xset dpms 0 0 300
 #exec --no-startup-id xautolock -time 10 -locker betterlockscreen -1 &
-exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command -l; xset dpms force off" -notify 10 -notifier "gnome-screensaver-command -a" &
+exec --no-startup-id xautolock -time 10 -locker "gnome-screensaver-command -l; xset dpms force off" -notify 10 -notifier "gnome-screensaver-command -a" &
 
 
 # class                 border  backgr. text
