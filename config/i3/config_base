@@ -45,7 +45,7 @@ bindsym Control+Shift+l exec --no-startup-id gnome-screensaver-command -l
 #bindsym Control+Shift+l exec betterlockscreen -l
 
 # Compton
-
+exec --no-startup-id compton
 
 # GNOME SETTINGS
 # Start GNOME screensaver
