@@ -31,7 +31,7 @@ font pango:adobe-source-control-pro 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -43,6 +43,9 @@ exec_always --no-startup-id setxkbmap -option caps:escape
 bindsym Control+Shift+l exec --no-startup-id gnome-screensaver-command -l
 # bindsym Control+Shift+l exec "~/bin/lock.sh"
 #bindsym Control+Shift+l exec betterlockscreen -l
+
+# Compton
+
 
 # GNOME SETTINGS
 # Start GNOME screensaver
