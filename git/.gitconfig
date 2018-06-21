@@ -3,5 +3,6 @@
 	name = Travis Crist
 [core]
 	excludesfile = /home/travis/.gitignore
+	editor = 'vim'
 [branch]
 	autosetuprebase = always
