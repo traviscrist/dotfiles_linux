@@ -50,7 +50,7 @@ font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-5 = "Material Icons:style=Regular:pixelsize=13;3"
 
 modules-left = i3
-modules-center = date
+modules-center = date github
 modules-right = filesystem volume wlan eth battery memory cpu temperature powermenu
 
 tray-position = ${env:TRAY:}
@@ -75,6 +75,28 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+[module/github]
+type = internal/github
+
+; Accessing an access token stored in file
+token = ${file:/home/travis/travis/github.access}
+
+; Whether empty notifications should be displayed or not
+empty-notifications = false
+
+; Number of seconds in between requests
+interval = 10
+
+; Available tags:
+;   <label> (default)
+format = <label>
+
+; Available tokens:
+;   %notifications% (default)
+; Default: Notifications: %notifications%
+label = "   %notifications%   "
+format-underline = #0a6cf5
 
 [module/filesystem]
 type = internal/fs
@@ -138,19 +160,6 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
