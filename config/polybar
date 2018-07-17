@@ -243,7 +243,7 @@ format-prefix = "   "
 label = %{F#99}%date%%{F-}   %{F#fff}%time%%{F-}
 date = %m/%d/%Y
 date-alt = %A, %B %d, %Y
-time = %I:%M:%S %p
+time = %I:%M %p
 time-alt = ${self.time}
 
 
