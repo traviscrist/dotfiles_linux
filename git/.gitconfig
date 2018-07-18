@@ -6,3 +6,12 @@
 	editor = 'vim'
 [branch]
 	autosetuprebase = always
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[mergetool "meld"]
+	cmd = /usr/sbin/meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"
+[alias]
+	up = pull --rebase --autostash
+
