@@ -10,10 +10,16 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     [[ $m = "eDP1" ]] && t=right || t=right
-    MONITOR=$m TRAY=$t polybar --reload example &
+    echo $m
+    if [ $m == "eDP1" ] 
+    then
+	MONITOR=$m TRAY=$t polybar --reload laptop &
+    else
+	MONITOR=$m TRAY=$t polybar --reload monitor &
+    fi
   done
 else
-  TRAY=right polybar --reload example &
+  TRAY=right polybar --reload monitor &
 fi
 
 echo "Bars launched..."
