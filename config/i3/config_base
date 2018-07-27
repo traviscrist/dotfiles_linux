@@ -273,6 +273,9 @@ bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
 # Hide title bar for certain apps
 for_window [class="Google-chrome"] border none
 
+# Assign apps to workspaces
+#assign [class="Google-chrome"] → $ws1
+
 # Gaps
 gaps inner 6
 gaps outer -4
