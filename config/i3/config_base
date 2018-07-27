@@ -258,17 +258,17 @@ bindsym $mod+m mode "$mode_monitor"
 
 
 # Special function keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/bin/volume.sh up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/bin/volume.sh down
-bindsym XF86AudioMute exec --no-startup-id ~/bin/volume.sh toggle-mute
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessDown exec xbacklight -dec 3
-bindsym XF86MonBrightnessUp exec xbacklight -inc 3
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
-bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
+#bindsym XF86AudioRaiseVolume exec --no-startup-id ~/bin/volume.sh up
+#bindsym XF86AudioLowerVolume exec --no-startup-id ~/bin/volume.sh down
+#bindsym XF86AudioMute exec --no-startup-id ~/bin/volume.sh toggle-mute
+#bindsym XF86AudioPlay exec playerctl play-pause
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 3
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 3
+#bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
+#bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
 
 # Hide title bar for certain apps
 for_window [class="Google-chrome"] border none
