@@ -37,7 +37,7 @@ bindsym $mod+Shift+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # Take screenshot interactively
-bindsym $mod+Shift+p exec gnome-screenshot --interactive --area -B
+bindsym Ctrl+Shift+P exec gnome-screenshot --interactive --area -B
 
 # Map CAPSLOCK to ESC
 exec_always --no-startup-id setxkbmap -option caps:escape
@@ -265,8 +265,8 @@ bindsym $mod+m mode "$mode_monitor"
 #bindsym XF86AudioPause exec playerctl pause
 #bindsym XF86AudioNext exec playerctl next
 #bindsym XF86AudioPrev exec playerctl previous
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 3
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 3
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3
+bindsym XF86MonBrightnessUp exec xbacklight -inc 3
 #bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
 #bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
 
