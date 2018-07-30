@@ -55,7 +55,7 @@ exec --no-startup-id compton
 exec --no-startup-id gnome-screensaver &
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
-exec --no-startup-id gnome-flashbak
+exec --no-startup-id gnome-flashback
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Set Wallpaper
 exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/aircraft-1528992966774-7723.jpg
