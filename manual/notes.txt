@@ -1,0 +1,7 @@
+disable notifications from flashback with: 
+
+gsettings set org.gnome.gnome-flashback notifications false
+
+then install notify-osd
+
+
