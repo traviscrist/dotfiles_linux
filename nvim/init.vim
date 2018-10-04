@@ -12,6 +12,7 @@ Plug 'othree/html5.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'w0rp/ale'
 
 " initialize plugin system
 call plug#end()
