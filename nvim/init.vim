@@ -10,6 +10,8 @@ Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/html5.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " initialize plugin system
 call plug#end()
@@ -29,6 +31,7 @@ set nocompatible            " Disable compatibility to old-time vi
 set showmatch               " Show matching brackets.
 set ignorecase              " Do case insensitive matching
 set hlsearch                " highlight search results
+set mouse=a
 
 "line length and numbering
 "set textwidth=120 
@@ -42,6 +45,16 @@ set shiftwidth=2            " width for autoindents
 "Window Splitting
 set splitbelow
 set splitright
+
+" Key Bindings
+
+" variables
+let mapleader = ","
+let maplocalleader = "\\"
+
+nnoremap <leader>e :NERDTreeToggle<CR>
+
+" Window Splitting
 nnoremap <C-J> <C-W><C-J> 
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -54,17 +67,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if (has("termguicolors"))
  set termguicolors
 endif
-
-" netrw setup
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
 
 "Syntax and Colors
 filetype plugin indent on
@@ -80,3 +82,21 @@ set clipboard+=unnamedplus
 " 'matchit.vim' is built-in so let's enable it!
 " " Hit '%' on 'if' to jump to 'else'.
 runtime macros/matchit.vim
+
+" Automatic Bindings
+augroup everything
+autocmd!
+
+" Open NerdTree when no files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" open NERDTree automatically when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" Close Vim if NerdTree is the only window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" End Automatic Bindings
+augroup END
