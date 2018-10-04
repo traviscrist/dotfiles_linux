@@ -16,6 +16,7 @@ call plug#end()
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
+set shiftround
 set backspace=indent,eol,start " Proper backspace behavior.
 set hidden                     " Possibility to have more than one
                                " unsaved buffers.
