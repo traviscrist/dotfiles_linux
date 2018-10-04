@@ -31,6 +31,7 @@ set nocompatible            " Disable compatibility to old-time vi
 set showmatch               " Show matching brackets.
 set ignorecase              " Do case insensitive matching
 set hlsearch                " highlight search results
+set incsearch
 set mouse=a
 
 "line length and numbering
@@ -45,6 +46,11 @@ set shiftwidth=2            " width for autoindents
 "Window Splitting
 set splitbelow
 set splitright
+
+" Don't offer to open certain files/directories
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.pdf,*.psd
+set wildignore+=node_modules/*,bower_components/*
 
 " Key Bindings
 
