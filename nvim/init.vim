@@ -13,12 +13,29 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " initialize plugin system
 call plug#end()
+
+" Key Bindings
+
+" variables
+let mapleader = ","
+let maplocalleader = "\\"
+
+nnoremap <leader>e <ESC>:NERDTreeToggle<CR>
+nnoremap <leader>qq <ESC>:qall!<CR>
+nnoremap <leader>w <ESC>:qall<CR>
+
+" Window Splitting
+nnoremap <C-J> <C-W><C-J> 
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Plugin Settings
 " 
@@ -26,6 +43,10 @@ call plug#end()
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" CtrlP
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_map = '<leader>p'
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
@@ -64,19 +85,6 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
 
-" Key Bindings
-
-" variables
-let mapleader = ","
-let maplocalleader = "\\"
-
-nnoremap <leader>e :NERDTreeToggle<CR>
-
-" Window Splitting
-nnoremap <C-J> <C-W><C-J> 
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " For Neovim 0.1.3 and 0.1.4
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
