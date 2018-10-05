@@ -13,9 +13,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " initialize plugin system
 call plug#end()
+
+" Plugin Settings
+" 
+" vim javascript settings
+
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.

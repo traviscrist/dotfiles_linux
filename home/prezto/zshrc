@@ -21,3 +21,5 @@ alias setup-dotfiles="~/bin/setup_dotfiles.sh"
 alias codiusd-test="sudo DEBUG=* CODIUS_BOOTSTRAP_PEERS=[] CODIUS_HYPER_NOOP=true CODIUS_ROOT=\"/home/travis/codiusDB\" CODIUS_MEMDOWN_PERSIST=true CODIUS_DEV=true  codiusd"
 alias moneyd-test="DEBUG=* moneyd --testnet xrp:start"
 alias moneyd-real="DEBUG=* moneyd xrp:start"
+alias vim=nvim
+alias vi=nvim
