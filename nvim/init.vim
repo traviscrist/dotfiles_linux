@@ -15,6 +15,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'wesQ3/vim-windowswap'
+Plug 'tpope/vim-fugitive'
 
 " initialize plugin system
 call plug#end()
@@ -22,6 +23,8 @@ call plug#end()
 " Plugin Settings
 " 
 " vim javascript settings
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 
 " various settings
