@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'wesQ3/vim-windowswap'
 
 " initialize plugin system
 call plug#end()
@@ -33,7 +34,8 @@ set hidden                     " Possibility to have more than one
 set ruler                      " Shows the current line number at the bottom.
                                " right of the screen.
 set wildmenu                   " Great command-line completion, use '<Tab>' to
-                               " move around and '<CR>' to validate.<Paste>
+                               " move around and '<CR>' to validate.<Paste>          
+                               
 set nocompatible            " Disable compatibility to old-time vi
 set showmatch               " Show matching brackets.
 set ignorecase              " Do case insensitive matching
