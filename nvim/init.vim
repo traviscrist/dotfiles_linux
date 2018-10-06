@@ -16,7 +16,6 @@ Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
 
 " initialize plugin system
 call plug#end()
@@ -43,10 +42,6 @@ nnoremap <C-H> <C-W><C-H>
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-" CtrlP
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_working_path_mode = 'ra'
-"let g:ctrlp_map = '<leader>p'
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
