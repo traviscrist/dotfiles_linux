@@ -27,6 +27,7 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 nnoremap <leader>e <ESC>:NERDTreeToggle<CR>
+nnoremap <leader>t <ESC>:NERDTree<CR>
 nnoremap <leader>qq <ESC>:qall!<CR>
 nnoremap <leader>w <ESC>:qall<CR>
 
