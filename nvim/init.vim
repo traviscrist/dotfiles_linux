@@ -13,16 +13,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-fugitive'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " initialize plugin system
 call plug#end()
@@ -46,22 +46,17 @@ nnoremap <C-H> <C-W><C-H>
 
 " Plugin Settings
 " 
-" vim javascript settings
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " LanguageClient 
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommmands = {
-  \ 'javascript' : 'javascript-typescript-langserver',
-  \ 'typescript' : 'javascript-typescript-langserver',
-  \ }
+"let g:LanguageClient_autoStart = 1
+"let g:LanguageClient_serverCommmands = {
+"  \ 'javascript' : 'javascript-typescript-langserver',
+"  \ 'typescript' : 'javascript-typescript-langserver',
+"  \ }
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
@@ -87,7 +82,7 @@ set mouse=a
 set number                  " add line numbers
 set tabstop=2               " number of columns occupied by a tab character
 set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
-set expandtab               " converts tabs to white space:w
+set expandtab               " converts tabs to white space
 set shiftwidth=2            " width for autoindents
 "set fo-=l "idk what this does 
 
