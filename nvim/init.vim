@@ -29,6 +29,8 @@ Plug 'junegunn/fzf.vim'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'jhawthorn/fzy'
 
+" Devicons Must be last
+Plug 'ryanoasis/vim-devicons'
 " initialize plugin system
 call plug#end()
 
@@ -62,6 +64,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 "  \ 'javascript' : 'javascript-typescript-langserver',
 "  \ 'typescript' : 'javascript-typescript-langserver',
 "  \ }
+
+" devicons
+set encoding=UTF-8
+
 
 
 " various settings
@@ -101,6 +107,8 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
 
+" Fonts
+set guifont=SourceCodePro\ Nerd\ Font
 
 " For Neovim 0.1.3 and 0.1.4
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
