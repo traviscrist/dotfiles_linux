@@ -13,20 +13,19 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-"Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': 'bash install.sh',
-"    \ }
-" (Optional) Multi-entry selection UI.
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'wincent/ferret'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'jhawthorn/fzy'
 
 " Devicons Must be last
@@ -42,7 +41,8 @@ let maplocalleader = "\\"
 
 nnoremap <leader>e <ESC>:NERDTreeToggle<CR>
 nnoremap <leader>t <ESC>:NERDTreeFocus<CR>
-nnoremap <leader>qq <ESC>:qall!<CR>
+nnoremap <leader>xx <ESC>:qall!<CR>
+nnoremap <leader>x <ESC>:q<CR>
 nnoremap <leader>w <ESC>:qall<CR>
 nnoremap <leader>p <ESC>:GFiles<CR>
 
@@ -59,16 +59,25 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " LanguageClient 
 " Automatically start language servers.
-"let g:LanguageClient_autoStart = 1
-"let g:LanguageClient_serverCommmands = {
-"  \ 'javascript' : 'javascript-typescript-langserver',
-"  \ 'typescript' : 'javascript-typescript-langserver',
-"  \ }
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommmands = {
+"   \ 'javascript' : ['/usr/bin/javascript-typescript-stdio'],
+"   \ 'typescript' : ['/usr/bin/javascript-typescript-stdio'],
+"   \ }
+" " Use deoplete.
+" let g:deoplete#enable_at_startup = 1
+" " Let <Tab> also do completion
+" inoremap <silent><expr> <Tab>
+" \ pumvisible() ? "\<C-n>" :
+" \ deoplete#mappings#manual_complete()
+" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" " Or map each action separately
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " devicons
 set encoding=UTF-8
-
-
 
 " various settings
 set autoindent                 " Minimal automatic indenting for any filetype.
@@ -147,6 +156,11 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " Close Vim if NerdTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" deoplete
+" Close the documentation window when completion is done
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 
 " End Automatic Bindings
 augroup END
