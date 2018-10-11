@@ -25,3 +25,9 @@ alias vim=nvim
 alias vi=nvim
 alias gcloud-update-creds="gcloud container clusters get-credentials primary"
 alias kubectl-prisma-prod="kubectl port-forward --cluster gke_stellar-chariot-213418_us-central1-a_primary prisma 4467:4466"
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'

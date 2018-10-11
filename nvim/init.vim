@@ -13,16 +13,21 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 "Plug 'autozimu/LanguageClient-neovim', {
 "    \ 'branch': 'next',
 "    \ 'do': 'bash install.sh',
 "    \ }
 " (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
+Plug 'wincent/ferret'
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'jhawthorn/fzy'
 
 " initialize plugin system
 call plug#end()
@@ -34,9 +39,10 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 nnoremap <leader>e <ESC>:NERDTreeToggle<CR>
-nnoremap <leader>t <ESC>:NERDTree<CR>
+nnoremap <leader>t <ESC>:NERDTreeFocus<CR>
 nnoremap <leader>qq <ESC>:qall!<CR>
 nnoremap <leader>w <ESC>:qall<CR>
+nnoremap <leader>p <ESC>:GFiles<CR>
 
 " Window Splitting
 nnoremap <C-J> <C-W><C-J> 
