@@ -386,9 +386,9 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 65
 
-format = <ramp>  <label>
+format = <label>
 format-underline = #0a6cf5
-format-warn = <ramp>  <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature%
