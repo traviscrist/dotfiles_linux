@@ -26,6 +26,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'wincent/ferret'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'Raimondi/delimitMate' 
 "Plug 'jhawthorn/fzy'
 
 " Devicons Must be last
