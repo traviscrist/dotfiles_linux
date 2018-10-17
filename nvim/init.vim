@@ -22,8 +22,8 @@ Plug 'tpope/vim-commentary'
 "     \ 'branch': 'next',
 "     \ 'do': 'bash install.sh',
 "     \ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'wincent/ferret'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'wincent/ferret'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'Raimondi/delimitMate' 
@@ -46,6 +46,7 @@ nnoremap <leader>xx <ESC>:qall!<CR>
 nnoremap <leader>x <ESC>:q<CR>
 nnoremap <leader>w <ESC>:qall<CR>
 nnoremap <leader>p <ESC>:GFiles<CR>
+nnoremap <leader>o <ESC>:F<CR>
 
 " Window Splitting
 nnoremap <C-J> <C-W><C-J> 
@@ -116,6 +117,13 @@ set splitright
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
+
+" fzf + ripgrep
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --smart-case --follow --color "always"
+  \ --glob "!.git/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
 " Fonts
 set guifont=SourceCodePro\ Nerd\ Font
