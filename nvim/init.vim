@@ -47,6 +47,7 @@ nnoremap <leader>x <ESC>:q<CR>
 nnoremap <leader>w <ESC>:qall<CR>
 nnoremap <leader>p <ESC>:GFiles<CR>
 nnoremap <leader>o <ESC>:F<CR>
+vnoremap // y/<C-R>"<CR>
 
 " Window Splitting
 nnoremap <C-J> <C-W><C-J> 

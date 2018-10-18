@@ -3,7 +3,7 @@
 	name = Travis Crist
 [core]
 	excludesfile = /home/travis/.gitignore
-	editor = 'vim'
+	editor = 'nvim'
 [branch]
 	autosetuprebase = always
 [diff]
