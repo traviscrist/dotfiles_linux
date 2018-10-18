@@ -79,6 +79,9 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
+" NerdTree
+let NERDTreeQuitOnOpen = 1
+
 " devicons
 set encoding=UTF-8
 
