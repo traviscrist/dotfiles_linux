@@ -90,8 +90,12 @@ set autoindent                 " Minimal automatic indenting for any filetype.
 set shiftround
 set backspace=indent,eol,start " Proper backspace behavior.
 set hidden                     " Possibility to have more than one
-                               " unsaved buffers.
-"set incsearch                  " Incremental search, hit '<CR>' to stop.
+
+" Swap Files and Backups
+set backupdir=~/.temp/backup//
+set directory=~/.temp/swp//
+set undodir=~/.temp/undo//
+
 set ruler                      " Shows the current line number at the bottom.
                                " right of the screen.
 set wildmenu                   " Great command-line completion, use '<Tab>' to
@@ -101,7 +105,7 @@ set nocompatible            " Disable compatibility to old-time vi
 set showmatch               " Show matching brackets.
 set ignorecase              " Do case insensitive matching
 set hlsearch                " highlight search results
-set incsearch
+set incsearch                  " Incremental search, hit '<CR>' to stop.
 set mouse=a
 
 "line length and numbering
