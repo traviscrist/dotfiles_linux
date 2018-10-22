@@ -14,9 +14,10 @@ Plug 'scrooloose/nerdtree'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
-Plug 'wesQ3/vim-windowswap'
-Plug 'tpope/vim-fugitive'
+"Plug 'wesQ3/vim-windowswap'
+"Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 't9md/vim-choosewin'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
@@ -57,6 +58,12 @@ nnoremap <C-H> <C-W><C-H>
 
 " Plugin Settings
 " 
+" vim choosewin
+" invoke with '-'
+nmap  -  <Plug>(choosewin)
+" if you want to use overlay feature
+let g:choosewin_overlay_enable = 1
+
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
