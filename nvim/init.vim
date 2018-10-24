@@ -114,6 +114,7 @@ set ignorecase              " Do case insensitive matching
 set hlsearch                " highlight search results
 set incsearch                  " Incremental search, hit '<CR>' to stop.
 set mouse=a
+set autoread
 
 "line length and numbering
 "set textwidth=120 
