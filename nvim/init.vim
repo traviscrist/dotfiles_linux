@@ -27,7 +27,7 @@ Plug 't9md/vim-choosewin'
 " Plug 'wincent/ferret'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'Raimondi/delimitMate' 
+"Plug 'Raimondi/delimitMate' 
 "Plug 'jhawthorn/fzy'
 
 " Devicons Must be last
@@ -43,7 +43,7 @@ let maplocalleader = "\\"
 
 nnoremap <leader>e <ESC>:NERDTreeToggle<CR>
 nnoremap <leader>t <ESC>:NERDTreeFocus<CR>
-nnoremap <leader>xx <ESC>:qall!<CR>
+nnoremap <leader>xq <ESC>:qall!<CR>
 nnoremap <leader>x <ESC>:q<CR>
 nnoremap <leader>w <ESC>:qall<CR>
 nnoremap <leader>p <ESC>:GFiles<CR>
