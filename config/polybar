@@ -407,7 +407,7 @@ type = custom/menu
 
 expand-right = true
 
-format-spacing = 1
+format-spacing = 3
 
 label-open = 
 label-open-underline = #f50a4d

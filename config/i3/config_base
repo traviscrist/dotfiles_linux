@@ -53,10 +53,10 @@ exec --no-startup-id compton
 # GNOME SETTINGS
 # Start GNOME screensaver
 exec --no-startup-id gnome-screensaver &
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-exec_always --no-startup-id gnome-power-manager
+# exec --no-startup-id /usr/lib/gnome-settings-daemon-3.0/gsd-xsettings
+#exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id gnome-flashback
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Set Wallpaper
 exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/aircraft-1528992966774-7723.jpg
 #exec gsettings set org.gnome.desktop.background picture-options "stretched" 
@@ -65,7 +65,7 @@ exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/aircraft-1528992966774
 # Start xautolock
 exec --no-startup-id xset dpms 0 0 300
 #exec --no-startup-id xautolock -time 10 -locker betterlockscreen -1 &
-exec --no-startup-id xautolock -time 10 -locker "gnome-screensaver-command -l; xset dpms force off" -notify 10 -notifier "gnome-screensaver-command -a" &
+#exec --no-startup-id xautolock -time 10 -locker "gnome-screensaver-command -l; xset dpms force off" -notify 10 -notifier "gnome-screensaver-command -a" &
 
 
 # class                 border  backgr. text

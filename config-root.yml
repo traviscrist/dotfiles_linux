@@ -16,16 +16,6 @@ files:
     dest: '/etc/systemd/sleep.conf'
     delim: '@'
 
-  systemd-system-x1-carbon-cpu-throttling-service:
-    src: systemd/cpu-throttling.service
-    dest: '/etc/systemd/system/cpu-throttling.service'
-    delim: '@'
-
-  systemd-system-x1-carbon-cpu-throttling-timer:
-    src: systemd/cpu-throttling.timer
-    dest: '/etc/systemd/system/cpu-throttling.timer'
-    delim: '@'
-
   prezto:
     src: home/prezto/
     dest: '/usr/lib/prezto/runcoms/'
