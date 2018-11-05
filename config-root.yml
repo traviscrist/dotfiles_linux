@@ -31,6 +31,11 @@ files:
     dest: '/etc/grub.d/31_hold_shift'
     delim: '@'
 
+  tlp: 
+    src: tlp/tlp
+    dest: '/etc/default/tlp'
+    delim: '@'
+
   bluetooth:
     src: bluetooth/main.conf
     dest: '/etc/bluetooth/main.conf'

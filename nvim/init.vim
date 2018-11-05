@@ -11,14 +11,15 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/html5.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
-"Plug 'wesQ3/vim-windowswap'
-"Plug 'tpope/vim-fugitive'
+" Plug 'wesQ3/vim-windowswap'
+" Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 't9md/vim-choosewin'
-"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" Plug 'tpope/vim-vinegar'
+" Plug 't9md/vim-choosewin'
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
 "     \ 'do': 'bash install.sh',
@@ -27,8 +28,8 @@ Plug 't9md/vim-choosewin'
 " Plug 'wincent/ferret'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
-"Plug 'Raimondi/delimitMate' 
-"Plug 'jhawthorn/fzy'
+" Plug 'Raimondi/delimitMate' 
+" Plug 'jhawthorn/fzy'
 
 " Devicons Must be last
 Plug 'ryanoasis/vim-devicons'
@@ -41,8 +42,9 @@ call plug#end()
 let mapleader = ","
 let maplocalleader = "\\"
 
-nnoremap <leader>e <ESC>:NERDTreeToggle<CR>
-nnoremap <leader>t <ESC>:NERDTreeFocus<CR>
+nnoremap <leader>t <ESC>:NERDTreeToggle<CR>
+" nnoremap <leader>f <ESC>:NERDTreeFocus<CR>
+
 nnoremap <leader>xq <ESC>:qall!<CR>
 nnoremap <leader>x <ESC>:q<CR>
 nnoremap <leader>w <ESC>:qall<CR>
@@ -172,8 +174,8 @@ augroup everything
 autocmd!
 
 " Open NerdTree when no files specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
