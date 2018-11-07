@@ -13,7 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 " Plug 'wesQ3/vim-windowswap'
 " Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -33,6 +33,8 @@ Plug 'junegunn/fzf.vim'
 
 " Devicons Must be last
 Plug 'ryanoasis/vim-devicons'
+Plug 'zxqfl/tabnine-vim'
+
 " initialize plugin system
 call plug#end()
 
@@ -65,7 +67,7 @@ nnoremap gf :vertical wincmd f<CR>
 " vim choosewin invoke with '-'
 " nmap  -  <Plug>(choosewin)
 " if you want to use overlay feature
-let g:choosewin_overlay_enable = 1
+" let g:choosewin_overlay_enable = 1
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
