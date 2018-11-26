@@ -14,7 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 " Plug 'wesQ3/vim-windowswap'
 " Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -34,7 +34,7 @@ Plug 'junegunn/fzf.vim'
 
 " Devicons Must be last
 Plug 'ryanoasis/vim-devicons'
-Plug 'zxqfl/tabnine-vim'
+" Plug 'zxqfl/tabnine-vim'
 
 " initialize plugin system
 call plug#end()
@@ -46,7 +46,7 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 nnoremap <leader>t <ESC>:NERDTreeToggle<CR>
-" nnoremap <leader>f <ESC>:NERDTreeFocus<CR>
+nnoremap <leader>f <ESC>:NERDTreeFocus<CR>
 
 nnoremap <leader>xq <ESC>:qall!<CR>
 nnoremap <leader>x <ESC>:q<CR>
@@ -178,12 +178,12 @@ augroup everything
 autocmd!
 
 " Open NerdTree when no files specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " open NERDTree automatically when vim starts up on opening a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " Close Vim if NerdTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
