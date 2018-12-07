@@ -29,7 +29,7 @@ Plug 'tpope/vim-commentary'
 " Plug 'wincent/ferret'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
-" Plug 'Raimondi/delimitMate' 
+Plug 'Raimondi/delimitMate' 
 " Plug 'jhawthorn/fzy'
 
 " Devicons Must be last
