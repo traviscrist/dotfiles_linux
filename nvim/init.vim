@@ -135,6 +135,10 @@ set shiftwidth=2            " width for autoindents
 set splitbelow
 set splitright
 
+" turn relative line numbers on
+set relativenumber
+set rnu
+
 " Don't offer to open certain files/directories
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
