@@ -35,6 +35,7 @@ Plug 'Raimondi/delimitMate'
 " Devicons Must be last
 Plug 'ryanoasis/vim-devicons'
 " Plug 'zxqfl/tabnine-vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " initialize plugin system
 call plug#end()
@@ -124,7 +125,7 @@ set autoread
 
 "line length and numbering
 "set textwidth=120 
-set number                  " add line numbers
+set number relativenumber   " add line numbers and relative line numbers
 set tabstop=2               " number of columns occupied by a tab character
 set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
@@ -134,10 +135,6 @@ set shiftwidth=2            " width for autoindents
 "Window Splitting
 set splitbelow
 set splitright
-
-" turn relative line numbers on
-set relativenumber
-set rnu
 
 " Don't offer to open certain files/directories
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
@@ -195,7 +192,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " deoplete
 " Close the documentation window when completion is done
 "autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
 
 " End Automatic Bindings
 augroup END
