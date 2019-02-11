@@ -53,7 +53,7 @@ nnoremap <leader>xq <ESC>:qall!<CR>
 nnoremap <leader>x <ESC>:q<CR>
 nnoremap <leader>w <ESC>:qall<CR>
 nnoremap <leader>f <ESC>:GFiles<CR>
-nnoremap <leader>p <ESC>:F<CR>
+nnoremap <leader>g <ESC>:F<CR>
 vnoremap // y/<C-R>"<CR>
 
 " Window Splitting
