@@ -1,5 +1,0 @@
-#!/bin/bash
-while [ 1 ]; do
-  xsetroot -name "$(acpi | head -n1) $(date)"
-  sleep 1
-done
