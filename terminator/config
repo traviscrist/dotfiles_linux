@@ -1,6 +1,7 @@
 [global_config]
   focus = system
-  title_inactive_bg_color = "#65737E"
+  inactive_color_offset = 1.0
+  title_inactive_bg_color = "#65737e"
   title_transmit_bg_color = "#92e1c0"
 [keybindings]
 [layouts]
