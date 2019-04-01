@@ -81,6 +81,11 @@ files:
     dest: '/home/travis/'
     delim: '@@@@'
 
+  terminator:
+    src: terminator/config
+    dest: '/home/travis/.config/terminator/config'
+    delim: '@@@'
+
   chrome:
     src: config/chrome-flags.conf
     dest: '/home/travis/.config/chrome-flags.conf'
