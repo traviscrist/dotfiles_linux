@@ -31,3 +31,9 @@ alias kubectl-prisma-prod="kubectl port-forward --cluster gke_stellar-chariot-21
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --smartcase --follow --glob "!.git/*"'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/travis/downloads/google-cloud-sdk-240.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/travis/downloads/google-cloud-sdk-240.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/travis/downloads/google-cloud-sdk-240.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/travis/downloads/google-cloud-sdk-240.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi

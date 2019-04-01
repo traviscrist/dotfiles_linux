@@ -36,40 +36,40 @@ vars:
 
 files:
 
-  alacritty:
-    src: config/alacritty.yml
-    dest: '/home/travis/.config/alacritty/alacritty.yml'
-    delim: '@'
+  # alacritty:
+  #   src: config/alacritty.yml
+  #   dest: '/home/travis/.config/alacritty/alacritty.yml'
+  #   delim: '@'
 
-  xinitrc:
-    src: home/xinitrc
-    dest: '/home/travis/.xinitrc'
-    delim: '@'
+  # xinitrc:
+  #   src: home/xinitrc
+  #   dest: '/home/travis/.xinitrc'
+  #   delim: '@'
 
-  xresources:
-    src: home/xresources
-    dest: '/home/travis/.Xresources'
-    delim: '@'
+  # xresources:
+  #   src: home/xresources
+  #   dest: '/home/travis/.Xresources'
+  #   delim: '@'
 
-  i3:
-    src: config/i3/
-    dest: '/home/travis/.config/i3/'
-    delim: '@'
+  # i3:
+  #   src: config/i3/
+  #   dest: '/home/travis/.config/i3/'
+  #   delim: '@'
 
-  polybar:
-    src: config/polybar
-    dest: '/home/travis/.config/polybar/config'
-    delim: '@'
+  # polybar:
+  #   src: config/polybar
+  #   dest: '/home/travis/.config/polybar/config'
+  #   delim: '@'
 
-  rofi:
-    src: config/rofi
-    dest: '/home/travis/.config/rofi/config'
-    delim: '@'
+  # rofi:
+  #   src: config/rofi
+  #   dest: '/home/travis/.config/rofi/config'
+  #   delim: '@'
 
-  gtk-3.0:
-    src: config/gtk-3.0/settings.ini
-    dest: '/home/travis/.config/gtk-3.0/settings.ini'
-    delim: '@'
+  # gtk-3.0:
+  #   src: config/gtk-3.0/settings.ini
+  #   dest: '/home/travis/.config/gtk-3.0/settings.ini'
+  #   delim: '@'
 
   scripts:
     src: scripts/
@@ -97,13 +97,13 @@ scripts:
     cmd: 'chmod +x /home/travis/bin/*'
     target: execute
 
-  rei3road:
-    cmd: '/home/travis/bin/i3-set-config.sh roadwarrior'
-    target: i3-roadwarrior
+  # rei3road:
+  #   cmd: '/home/travis/bin/i3-set-config.sh roadwarrior'
+  #   target: i3-roadwarrior
 
-  rei3office:
-    cmd: '/home/travis/bin/i3-set-config.sh office'
-    target: i3-office
+  # rei3office:
+  #   cmd: '/home/travis/bin/i3-set-config.sh office'
+  #   target: i3-office
 
 
   noop:
