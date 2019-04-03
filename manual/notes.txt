@@ -7,10 +7,6 @@ gsettings set org.gnome.gnome-flashback notifications false
 then install notify-osd
 
 # Gnome 3 Setup
-
-
-
 gnome-shell-extension-no-title-bar
 gnome-shell-extension-dash-to-dock
 gnome-shell-extension-vitals-git
-gnome-shell-extension-panel-osd
