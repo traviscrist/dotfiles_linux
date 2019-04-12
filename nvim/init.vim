@@ -12,7 +12,6 @@ Plug 'othree/html5.vim'
 Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
@@ -20,22 +19,10 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
-" Plug 'wesQ3/vim-windowswap'
-" Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-vinegar'
-" Plug 't9md/vim-choosewin'
-" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'wincent/ferret'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'Raimondi/delimitMate' 
-" Plug 'jhawthorn/fzy'
 
 " Devicons Must be last
 Plug 'ryanoasis/vim-devicons'
@@ -54,6 +41,8 @@ let maplocalleader = "\\"
 nnoremap <leader>t <ESC>:NERDTreeToggle<CR>
 " nnoremap <leader>f <ESC>:NERDTreeFocus<CR>
 
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>m :History<CR>
 nnoremap <leader>e <ESC>:GFiles<CR>
 nnoremap <leader>g <ESC>:F<CR>
 vnoremap // y/<C-R>"<CR>
@@ -67,33 +56,8 @@ nnoremap <C-H> <C-W><C-H>
 " `gf` opens file under cursor in a new vertical split
 nnoremap gf :vertical wincmd f<CR>
 
-" Plugin Settings
-" vim choosewin invoke with '-'
-" nmap  -  <Plug>(choosewin)
-" if you want to use overlay feature
-" let g:choosewin_overlay_enable = 1
-
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" LanguageClient 
-" Automatically start language servers.
-" let g:LanguageClient_autoStart = 1
-" let g:LanguageClient_serverCommmands = {
-"   \ 'javascript' : ['/usr/bin/javascript-typescript-stdio'],
-"   \ 'typescript' : ['/usr/bin/javascript-typescript-stdio'],
-"   \ }
-" " Use deoplete.
-" let g:deoplete#enable_at_startup = 1
-" " Let <Tab> also do completion
-" inoremap <silent><expr> <Tab>
-" \ pumvisible() ? "\<C-n>" :
-" \ deoplete#mappings#manual_complete()
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" " Or map each action separately
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " NerdTree
 let NERDTreeQuitOnOpen = 1
