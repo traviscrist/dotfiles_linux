@@ -88,6 +88,7 @@ set hlsearch                " highlight search results
 set incsearch                  " Incremental search, hit '<CR>' to stop.
 set mouse=a
 set autoread
+au FocusGained,BufEnter * :checktime
 
 "line length and numbering
 "set textwidth=120 
@@ -161,6 +162,16 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " End Automatic Bindings
 augroup END
+
+"Ale Settings
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier-standard'],
+\}
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
 
 
 "COC Settings
