@@ -46,6 +46,12 @@ files:
     dest: '/etc/pacman.conf'
     delim: '@'
 
+  pacman:
+    src: earlyoom/earlyoom
+    dest: '/etc/default/earlyoom'
+    delim: '@'
+
+
 scripts:
   noop:
     cmd: echo Hello
