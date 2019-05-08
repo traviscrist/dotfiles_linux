@@ -118,10 +118,10 @@ command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>),
 let $FZF_DEFAULT_OPTS='--layout=reverse'
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
+
 function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
   call setbufvar(buf, '&signcolumn', 'no')
-
   let height = &lines - 3
   let width = float2nr(&columns - (&columns * 2 / 10))
   let col = float2nr((&columns - width) / 2)
@@ -134,7 +134,8 @@ function! FloatingFZF()
         \ 'height': height
         \ }
 
-  call nvim_open_win(buf, v:true, opts)
+  let win = nvim_open_win(buf, v:true, opts)
+  call setwinvar(win, '&relativenumber', 0)
 endfunction
 
 " Fonts
