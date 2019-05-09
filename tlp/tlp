@@ -242,7 +242,7 @@ RESTORE_DEVICE_STATE_ON_STARTUP=0
 
 # Radio devices to disable on startup: bluetooth, wifi, wwan.
 # Separate multiple devices with spaces.
-DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
+# DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
 
 # Radio devices to enable on startup: bluetooth, wifi, wwan.
 # Separate multiple devices with spaces.
