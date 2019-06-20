@@ -3,15 +3,17 @@
 	name = Travis Crist
 [core]
 	excludesfile = /home/travis/.gitignore
-	editor = 'nvim'
+	editor = nvim
 [branch]
 	autosetuprebase = always
 [diff]
-	tool = meld
+	tool = vimdiff
 [merge]
-	tool = meld
+	tool = vimdiff
 [mergetool "meld"]
 	cmd = /usr/sbin/meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"
 [alias]
 	up = pull --rebase --autostash
-
+	d = difftool
+[difftool]
+	prompt = false

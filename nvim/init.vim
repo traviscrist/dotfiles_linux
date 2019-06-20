@@ -4,7 +4,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Make sure you use single quotes
-Plug 'mhartington/oceanic-next' 
+Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -22,7 +22,7 @@ Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'tpope/vim-commentary'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'Raimondi/delimitMate' 
+Plug 'Raimondi/delimitMate'
 
 " Devicons Must be last
 Plug 'ryanoasis/vim-devicons'
@@ -48,7 +48,7 @@ nnoremap <leader>g <ESC>:F<CR>
 vnoremap // y/<C-R>"<CR>
 
 " Window Splitting
-nnoremap <C-J> <C-W><C-J> 
+nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
@@ -79,8 +79,8 @@ set undodir=~/.temp/undo//
 set ruler                      " Shows the current line number at the bottom.
                                " right of the screen.
 set wildmenu                   " Great command-line completion, use '<Tab>' to
-                               " move around and '<CR>' to validate.<Paste>          
-                               
+                               " move around and '<CR>' to validate.<Paste>
+
 set nocompatible            " Disable compatibility to old-time vi
 set showmatch               " Show matching brackets.
 set ignorecase              " Do case insensitive matching
@@ -91,13 +91,13 @@ set autoread
 au FocusGained,BufEnter * :checktime
 
 "line length and numbering
-"set textwidth=120 
+"set textwidth=120
 set number relativenumber   " add line numbers and relative line numbers
 set tabstop=2               " number of columns occupied by a tab character
 set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
 set shiftwidth=2            " width for autoindents
-"set fo-=l "idk what this does 
+"set fo-=l "idk what this does
 
 "Window Splitting
 set splitbelow
@@ -203,6 +203,9 @@ let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_
 
 " if hidden is not set, TextEdit might fail.
 set hidden
+
+" Use current file dir
+set autochdir
 
 " Some server have issues with backup files, see #649
 set nobackup

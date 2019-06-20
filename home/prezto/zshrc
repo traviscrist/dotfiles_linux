@@ -22,6 +22,7 @@ alias codiusd-test="sudo DEBUG=* CODIUS_BOOTSTRAP_PEERS=[] CODIUS_HYPER_NOOP=tru
 alias moneyd-test="DEBUG=* moneyd --testnet xrp:start"
 alias moneyd-real="DEBUG=* moneyd xrp:start"
 alias vim=nvim
+alias vimdiff='nvim -d'
 alias vi=nvim
 alias gcloud-update-creds="gcloud container clusters get-credentials primary"
 alias kubectl-prisma-prod="kubectl port-forward --cluster gke_stellar-chariot-213418_us-central1-a_primary prisma 4467:4466"
