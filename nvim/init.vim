@@ -18,6 +18,8 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-docker', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'tpope/vim-commentary'
 Plug '/usr/bin/fzf'
@@ -89,6 +91,10 @@ set incsearch                  " Incremental search, hit '<CR>' to stop.
 set mouse=a
 set autoread
 au FocusGained,BufEnter * :checktime
+
+" Maintain undo history between sessions
+set undofile
+set undodir=~/.config/nvim/undodir
 
 "line length and numbering
 "set textwidth=120
