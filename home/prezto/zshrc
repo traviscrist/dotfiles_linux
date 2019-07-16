@@ -21,7 +21,7 @@ alias setup-dotfiles="~/bin/setup_dotfiles.sh"
 alias vim=nvim
 alias vimdiff='nvim -d'
 alias vi=nvim
-alias git=hub
+eval "$(hub alias -s)"
 alias gcloud-update-creds="gcloud container clusters get-credentials primary"
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
