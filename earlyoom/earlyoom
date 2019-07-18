@@ -2,7 +2,7 @@
 # /etc/init.d/earlyoom or by systemd from earlyoom.service.
 
 # Options to pass to earlyoom
-EARLYOOM_ARGS="-r 60 -m 5 --avoid '(^|/)(slack|gnome-shell|gnome-session-binary|nvim)$'"
+EARLYOOM_ARGS="-r 60 -m 5 --avoid '(^|/)(slack|gnome-shell|gnome-session-binary|nvim)$' --prefer '(^|/)(gnome-software)$'"
 
 # Examples:
 
