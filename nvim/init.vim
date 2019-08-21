@@ -4,11 +4,18 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Make sure you use single quotes
+" Themes
 Plug 'mhartington/oceanic-next'
+Plug 'patstockwell/vim-monokai-tasty'
+
 Plug 'vim-airline/vim-airline'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
@@ -18,7 +25,6 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-docker', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'tpope/vim-commentary'
