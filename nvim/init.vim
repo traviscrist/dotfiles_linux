@@ -15,7 +15,6 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
@@ -25,7 +24,6 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'tpope/vim-commentary'
 Plug '/usr/bin/fzf'
